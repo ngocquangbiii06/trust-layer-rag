@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Mã giảm giá để lâu quá có bị mất không?",
+ "passages": [
+  "Hạn sử dụng\nMỗi voucher có hiệu lực 30 ngày kể từ ngày nhận, trừ khi chương trình ghi khác.",
+  "Sử dụng điểm\nĐiểm có hiệu lực 12 tháng kể từ ngày nhận và được trừ trực tiếp vào lần thanh toán tiếp theo. Điểm không đổi được thành tiền mặt và không chuyển cho người khác.",
+  "Điều kiện\nSố dư ví phải bằng 0 và không có giao dịch hoặc khiếu nại đang xử lý. Điểm hoàn chưa dùng sẽ mất khi đóng tài khoản.",
+  "Khi giao dịch bị hủy\nNếu giao dịch dùng voucher bị hủy hoặc hoàn tiền, voucher được trả lại nếu còn hạn sử dụng. Voucher đã hết hạn không được cấp lại."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Voucher có hiệu lực 30 ngày kể từ ngày nhận.",
+    "source": 1,
+    "quote": "Mỗi voucher có hiệu lực 30 ngày kể từ ngày nhận, trừ khi chương trình ghi khác."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 489,
+  "completion_tokens": 201,
+  "total_tokens": 690
+ },
+ "latency_ms": 2133
+}

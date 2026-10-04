@@ -171,3 +171,16 @@ def test_other_errors_are_not_retried(monkeypatch):
     with pytest.raises(httpx.HTTPStatusError):
         OpenAICompatLLM(api_key=FAKE_KEY).complete("q", PASSAGES)
     assert len(calls) == 1
+
+
+def test_plain_text_refusal_instead_of_json_means_no_answer(monkeypatch):
+    body = {"error": {"code": "json_validate_failed", "failed_generation": "I'm sorry, but I can't help with that."}}
+    monkeypatch.setattr(llm_module.httpx, "post", lambda *a, **k: response(400, body))
+    reply = OpenAICompatLLM(api_key=FAKE_KEY).complete("q", PASSAGES)
+    assert not reply.answerable and reply.claims == []
+
+
+def test_other_400_errors_are_still_raised(monkeypatch):
+    monkeypatch.setattr(llm_module.httpx, "post", lambda *a, **k: response(400, {"error": {"code": "model_not_found"}}))
+    with pytest.raises(httpx.HTTPStatusError):
+        OpenAICompatLLM(api_key=FAKE_KEY).complete("q", PASSAGES)

@@ -125,7 +125,14 @@ class OpenAICompatLLM:
             },
         }
         started = time.perf_counter()
-        payload = self._post(body).json()
+        try:
+            payload = self._post(body).json()
+        except httpx.HTTPStatusError as error:
+            # The model answered in plain text instead of the JSON schema, typically a refusal of a
+            # prompt-injection attempt. That is "no answer", not an outage: fail closed.
+            if error.response.status_code == 400 and "json_validate_failed" in error.response.text:
+                return LLMReply(False, [], {}, int((time.perf_counter() - started) * 1000))
+            raise
         latency_ms = int((time.perf_counter() - started) * 1000)
         data = json.loads(payload["choices"][0]["message"]["content"])
         claims = [Claim(c["text"], int(c["source"]), c["quote"]) for c in data.get("claims", [])]

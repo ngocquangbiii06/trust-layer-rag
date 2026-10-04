@@ -3,9 +3,10 @@
 import re
 from dataclasses import dataclass
 
-from app.text import fold, tokens
+from app.text import tokens
 
 _NUMBER = re.compile(r"\d+(?:[.,]\d+)*%?")
+_LIST_MARKER = re.compile(r"^\s*(?:[-*•]|\d{1,2}[.)])\s+")  # "- ", "1. ", "2) " at the start of a line
 _STOP = {
     "la", "va", "cua", "co", "khong", "duoc", "cho", "trong", "den", "tu", "mot", "cac", "nhung",
     "the", "thi", "se", "da", "bi", "khi", "neu", "de", "voi", "nay", "do", "o", "tren", "ve",
@@ -28,6 +29,16 @@ class Verdict:
 
 def _squash(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
+
+
+def _words(text: str) -> str:
+    """The text as folded words separated by single spaces, padded so a match is on word borders.
+
+    Punctuation, quote marks, list bullets and line breaks disappear, so a quote copied correctly
+    still matches when the model changed “ ” to ' or joined two list items into one sentence.
+    """
+    lines = (_LIST_MARKER.sub("", line) for line in text.splitlines())
+    return " " + " ".join(tokens(" ".join(lines))) + " "
 
 
 def _numbers(text: str) -> set[str]:
@@ -55,14 +66,16 @@ def verify_claim(
         return Verdict(claim, False, "bad_source")
     passage = passages[claim.source - 1]
     quote = _squash(claim.quote)
-    if len(quote) < 8 or fold(quote) not in fold(_squash(passage)):
+    if len(quote) < 8 or _words(quote) not in _words(passage):
         return Verdict(claim, False, "quote_not_in_source")
     heading = passage.split("\n", 1)[0] if "\n" in passage else ""
     if not _numbers(claim.text) <= (_numbers(quote) | _numbers(heading) | _numbers(question)):
         return Verdict(claim, False, "number_not_in_quote")
     words = _content_words(claim.text)
     if words:
-        overlap = len(words & _content_words(quote)) / len(words)
+        # The heading counts as support too: a quote under "Dấu hiệu lừa đảo thường gặp" backs
+        # the claim "đây là dấu hiệu lừa đảo" even though the quote itself never says so.
+        overlap = len(words & (_content_words(quote) | _content_words(heading))) / len(words)
         if overlap < min_overlap:
             return Verdict(claim, False, "claim_not_supported_by_quote")
     return Verdict(claim, True, "")

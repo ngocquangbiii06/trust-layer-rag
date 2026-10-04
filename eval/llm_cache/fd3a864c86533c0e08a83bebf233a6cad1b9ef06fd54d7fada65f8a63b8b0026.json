@@ -1,0 +1,32 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Mình lỡ bấm nhầm số người nhận khi chuyển, có lấy lại được không?",
+ "passages": [
+  "Lưu ý\nVí Mây không cam kết thu hồi được tiền chuyển nhầm. Trước khi chuyển, người dùng cần kiểm tra kỹ số điện thoại và tên hiển thị của người nhận.",
+  "Báo cáo\nNgười chuyển nhầm cần báo qua mục Hỗ trợ trong vòng 24 giờ kể từ khi chuyển để Ví Mây có thể hỗ trợ tạm giữ khoản tiền nếu chưa bị sử dụng.",
+  "Khi nghi ngờ bị lừa\n1. Khóa ví ngay trong mục Bảo mật của ứng dụng.\n2. Báo cáo qua mục Hỗ trợ, chọn \"Báo cáo lừa đảo\".\n3. Giữ lại tin nhắn, ảnh chụp màn hình và mã giao dịch làm bằng chứng.\n\nVí Mây có thể hỗ trợ tạm giữ giao dịch nhưng không cam kết thu hồi được tiền đã chuyển cho người nhận.",
+  "Sử dụng điểm\nĐiểm có hiệu lực 12 tháng kể từ ngày nhận và được trừ trực tiếp vào lần thanh toán tiếp theo. Điểm không đổi được thành tiền mặt và không chuyển cho người khác."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Không có cam kết thu hồi tiền chuyển nhầm.",
+    "source": 1,
+    "quote": "Ví Mây không cam kết thu hồi được tiền chuyển nhầm."
+   },
+   {
+    "text": "Có thể tạm giữ nếu báo trong 24 giờ.",
+    "source": 2,
+    "quote": "Người chuyển nhầm cần báo qua mục Hỗ trợ trong vòng 24 giờ kể từ khi chuyển để Ví Mây có thể hỗ trợ tạm giữ khoản tiền nếu chưa bị sử dụng."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 573,
+  "completion_tokens": 709,
+  "total_tokens": 1282
+ },
+ "latency_ms": 2038
+}

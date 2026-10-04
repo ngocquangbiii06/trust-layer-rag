@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Mình không dùng ví nữa thì hủy ví bằng cách nào?",
+ "passages": [
+  "Hủy liên kết\nVào mục Ngân hàng liên kết, chọn tài khoản và bấm Hủy liên kết. Việc hủy có hiệu lực ngay. Nếu đang có giao dịch chưa hoàn tất qua tài khoản đó, hệ thống chỉ hủy sau khi giao dịch kết thúc.",
+  "Điều kiện\nSố dư ví phải bằng 0 và không có giao dịch hoặc khiếu nại đang xử lý. Điểm hoàn chưa dùng sẽ mất khi đóng tài khoản.",
+  "Khi nghi ngờ bị lừa\n1. Khóa ví ngay trong mục Bảo mật của ứng dụng.\n2. Báo cáo qua mục Hỗ trợ, chọn \"Báo cáo lừa đảo\".\n3. Giữ lại tin nhắn, ảnh chụp màn hình và mã giao dịch làm bằng chứng.\n\nVí Mây có thể hỗ trợ tạm giữ giao dịch nhưng không cam kết thu hồi được tiền đã chuyển cho người nhận.",
+  "Khi giao dịch bị hủy\nNếu giao dịch dùng voucher bị hủy hoặc hoàn tiền, voucher được trả lại nếu còn hạn sử dụng. Voucher đã hết hạn không được cấp lại."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Số dư ví phải bằng 0 và không có giao dịch hoặc khiếu nại đang xử lý. Điểm hoàn chưa dùng sẽ mất khi đóng tài khoản.",
+    "source": 2,
+    "quote": "Số dư ví phải bằng 0 và không có giao dịch hoặc khiếu nại đang xử lý. Điểm hoàn chưa dùng sẽ mất khi đóng tài khoản."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 571,
+  "completion_tokens": 456,
+  "total_tokens": 1027
+ },
+ "latency_ms": 2030
+}

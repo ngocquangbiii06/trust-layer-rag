@@ -16,7 +16,6 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 from app.pii import mask_pii
-from app.retrieval import DEFAULT_MODEL, Retriever
 from app.text import fold
 from eval.answer_eval import build_llm, run
 from eval.live import STAGES
@@ -111,16 +110,14 @@ def evidence_coverage(retriever, questions: list[dict], ks: tuple[int, ...]) -> 
     never shown. It uses the same hybrid search and passage format as the answer pipeline.
     """
     scored = [q for q in questions if q["expect"] == "answer" and q["key_facts"]]
-    coverage = {}
-    for k in ks:
-        covered = 0
-        for q in scored:
-            hits = retriever.search(mask_pii(q["question"]).text, k=k)
-            passages = [f"{h.chunk.heading}\n{h.chunk.text}" if h.chunk.heading else h.chunk.text
-                        for h in hits]
-            covered += evidence_present(q, passages)
-        coverage[k] = (covered, len(scored))
-    return coverage
+    covered = {k: 0 for k in ks}
+    for q in scored:  # one search per question: a reranker makes each search expensive
+        hits = retriever.search(mask_pii(q["question"]).text, k=max(ks))
+        passages = [f"{h.chunk.heading}\n{h.chunk.text}" if h.chunk.heading else h.chunk.text
+                    for h in hits]
+        for k in ks:
+            covered[k] += evidence_present(q, passages[:k])
+    return {k: (covered[k], len(scored)) for k in ks}
 
 
 def _short(text: str, limit: int = 150) -> str:
@@ -254,12 +251,11 @@ def render_compare(tag: str, model: str, rows: list[dict], off_rows: list[dict])
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--tag", default="L0", choices=sorted(STAGES), help="a stage of eval.live")
-    parser.add_argument("--model", default=DEFAULT_MODEL, help="embedding model for retrieval")
     parser.add_argument("--out-dir", type=Path, default=ROOT / "results")
     args = parser.parse_args()
     stage = STAGES[args.tag]
     chunks, questions = stage.loader()
-    retriever = Retriever(chunks, args.model)
+    retriever = stage.retriever(chunks)
     on = run(build_llm("cached"), True, 0.0, retriever, questions, stage.top_k)
     off = run(build_llm("cached"), False, 0.0, retriever, questions, stage.top_k)
     coverage = evidence_coverage(retriever, questions, (3, 4, 5, 6, 8, 10))

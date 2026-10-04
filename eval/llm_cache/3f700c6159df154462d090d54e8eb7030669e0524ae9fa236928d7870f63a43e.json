@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Chụp giấy tờ xong thì bao lâu mới biết kết quả?",
+ "passages": [
+  "Quy trình xử lý\n1. Ví Mây ghi nhận yêu cầu và liên hệ người nhận trong ứng dụng.\n2. Nếu người nhận đồng ý hoàn trả, tiền được hoàn về người gửi trong 3 ngày làm việc.\n3. Nếu người nhận không đồng ý, Ví Mây không có quyền tự ý lấy lại tiền. Người gửi có thể nhờ cơ quan chức năng giải quyết.",
+  "Sử dụng điểm\nĐiểm có hiệu lực 12 tháng kể từ ngày nhận và được trừ trực tiếp vào lần thanh toán tiếp theo. Điểm không đổi được thành tiền mặt và không chuyển cho người khác.",
+  "Thời gian xử lý\nPhần lớn hồ sơ được duyệt từ 15 phút đến 24 giờ. Hồ sơ cần kiểm tra thủ công có thể mất tới 3 ngày làm việc.",
+  "Bị từ chối\nHồ sơ thường bị từ chối do ảnh mờ, mất góc hoặc giấy tờ hết hạn. Mỗi tài khoản được thử lại tối đa 5 lần trong 24 giờ. Quá số lần này, tài khoản phải chờ 24 giờ mới được thử tiếp."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Kết quả thường được duyệt trong 15 phút đến 24 giờ, hoặc tới 3 ngày làm việc nếu cần kiểm tra thủ công.",
+    "source": 3,
+    "quote": "Phần lớn hồ sơ được duyệt từ 15 phút đến 24 giờ. Hồ sơ cần kiểm tra thủ công có thể mất tới 3 ngày làm việc."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 576,
+  "completion_tokens": 443,
+  "total_tokens": 1019
+ },
+ "latency_ms": 1715
+}

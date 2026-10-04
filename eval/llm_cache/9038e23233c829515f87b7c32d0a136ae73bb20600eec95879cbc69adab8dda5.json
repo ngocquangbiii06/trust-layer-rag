@@ -1,0 +1,21 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Hôm nay thời tiết ở Hà Nội thế nào?",
+ "passages": [
+  "Sau khi đóng\nTài khoản không thể mở lại. Người dùng muốn dùng tiếp phải đăng ký tài khoản mới và xác thực lại. Dữ liệu được lưu theo thời hạn nêu trong chính sách quyền riêng tư.",
+  "Lưu ý\nHạn mức mỗi ngày được tính từ 00:00 đến 23:59 theo giờ Việt Nam. Khi đạt hạn mức, giao dịch tiếp theo bị từ chối và người dùng được thông báo trong ứng dụng.",
+  "Khóa do nghi ngờ gian lận\nKhi hệ thống phát hiện giao dịch bất thường, tài khoản có thể bị khóa để bảo vệ người dùng. Ví Mây liên hệ qua ứng dụng và yêu cầu xác minh. Thời gian xác minh thông thường từ 1 đến 2 ngày làm việc.",
+  "Quyền của người dùng\nNgười dùng có thể yêu cầu xem, sửa hoặc xóa dữ liệu. Yêu cầu được xử lý trong 30 ngày. Dữ liệu giao dịch thuộc diện bắt buộc lưu trữ không thể xóa trước hết thời hạn lưu."
+ ],
+ "reply": {
+  "answerable": false,
+  "claims": []
+ },
+ "usage": {
+  "prompt_tokens": 555,
+  "completion_tokens": 80,
+  "total_tokens": 635
+ },
+ "latency_ms": 734
+}

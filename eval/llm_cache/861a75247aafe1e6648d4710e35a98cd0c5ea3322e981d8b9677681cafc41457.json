@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Ví có bán thông tin của mình cho bên thứ ba không?",
+ "passages": [
+  "Chia sẻ dữ liệu\nVí Mây chỉ chia sẻ dữ liệu với ngân hàng và đối tác thanh toán cần thiết để thực hiện giao dịch, và với cơ quan nhà nước khi có yêu cầu hợp pháp. Ví Mây không bán dữ liệu cá nhân.",
+  "Dữ liệu Ví Mây thu thập\nHọ tên, số điện thoại, thông tin giấy tờ định danh, ảnh khuôn mặt phục vụ xác thực và lịch sử giao dịch.",
+  "Hạn mức giao dịch theo cấp xác thực\nVí Mây chia tài khoản thành ba cấp xác thực. Hạn mức áp dụng từ phiên bản chính sách 10/2026.",
+  "Nguyên tắc cốt lõi\nNhân viên Ví Mây không bao giờ yêu cầu người dùng cung cấp mã OTP, mã PIN hoặc mật khẩu, dù qua điện thoại, tin nhắn hay mạng xã hội. Ai yêu cầu những thông tin này đều là giả mạo."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Ví Mây không bán dữ liệu cá nhân.",
+    "source": 1,
+    "quote": "Ví Mây không bán dữ liệu cá nhân."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 533,
+  "completion_tokens": 352,
+  "total_tokens": 885
+ },
+ "latency_ms": 1995
+}

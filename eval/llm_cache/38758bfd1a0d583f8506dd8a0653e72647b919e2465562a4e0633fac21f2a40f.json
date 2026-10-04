@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Đã hơn hai tháng kể từ ngày giao dịch, giờ mình còn kiện nại được không?",
+ "passages": [
+  "Khiếu nại\n- Gửi khiếu nại trong vòng 60 ngày kể từ ngày phát sinh giao dịch. Quá hạn này, Ví Mây có quyền từ chối tiếp nhận.\n- Ví Mây phản hồi xác nhận đã nhận khiếu nại trong 24 giờ.\n- Thời gian xử lý: tối đa 15 ngày làm việc. Khiếu nại phức tạp cần phối hợp ngân hàng hoặc đối tác có thể kéo dài tới 30 ngày làm việc, và người dùng được thông báo lý do.",
+  "Sử dụng điểm\nĐiểm có hiệu lực 12 tháng kể từ ngày nhận và được trừ trực tiếp vào lần thanh toán tiếp theo. Điểm không đổi được thành tiền mặt và không chuyển cho người khác.",
+  "Hoàn điểm thanh toán\nMỗi giao dịch thanh toán QR tại cửa hàng đối tác được hoàn điểm bằng 1% giá trị giao dịch. Tổng điểm hoàn tối đa 50.000 điểm mỗi tháng. 1 điểm quy đổi 1 đồng.",
+  "Lưu ý\nHạn mức mỗi ngày được tính từ 00:00 đến 23:59 theo giờ Việt Nam. Khi đạt hạn mức, giao dịch tiếp theo bị từ chối và người dùng được thông báo trong ứng dụng."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Không, vì đã quá 60 ngày.",
+    "source": 1,
+    "quote": "Gửi khiếu nại trong vòng 60 ngày kể từ ngày phát sinh giao dịch. Quá hạn này, Ví Mây có quyền từ chối tiếp nhận."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 607,
+  "completion_tokens": 469,
+  "total_tokens": 1076
+ },
+ "latency_ms": 3557
+}

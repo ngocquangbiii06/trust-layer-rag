@@ -1,0 +1,21 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Người dưới 18 tuổi có mở ví được không?",
+ "passages": [
+  "Báo cáo\nNgười chuyển nhầm cần báo qua mục Hỗ trợ trong vòng 24 giờ kể từ khi chuyển để Ví Mây có thể hỗ trợ tạm giữ khoản tiền nếu chưa bị sử dụng.",
+  "Điều kiện\nTài khoản phải đạt cấp 2 (đã xác thực căn cước công dân và khuôn mặt) trước khi liên kết ngân hàng. Tên chủ tài khoản ngân hàng phải trùng tên đã xác thực trên Ví Mây.",
+  "Cấp 1: chỉ xác thực số điện thoại\n- Số dư ví tối đa: 10.000.000 đồng.\n- Tổng giao dịch mỗi ngày: 5.000.000 đồng.\n- Không được chuyển tiền ra ngoài hệ thống Ví Mây và không được rút về ngân hàng.",
+  "Cấp 3: đã liên kết ít nhất một ngân hàng\n- Số dư ví tối đa: 300.000.000 đồng.\n- Tổng giao dịch mỗi ngày: 200.000.000 đồng."
+ ],
+ "reply": {
+  "answerable": false,
+  "claims": []
+ },
+ "usage": {
+  "prompt_tokens": 546,
+  "completion_tokens": 75,
+  "total_tokens": 621
+ },
+ "latency_ms": 2638
+}

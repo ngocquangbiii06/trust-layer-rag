@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Không dùng ví cả năm thì có sao không?",
+ "passages": [
+  "Điều kiện\nSố dư ví phải bằng 0 và không có giao dịch hoặc khiếu nại đang xử lý. Điểm hoàn chưa dùng sẽ mất khi đóng tài khoản.",
+  "Sử dụng điểm\nĐiểm có hiệu lực 12 tháng kể từ ngày nhận và được trừ trực tiếp vào lần thanh toán tiếp theo. Điểm không đổi được thành tiền mặt và không chuyển cho người khác.",
+  "Phí duy trì\nVí Mây không thu phí duy trì tài khoản.",
+  "Quy tắc sử dụng\n- Mỗi giao dịch chỉ dùng được 1 voucher.\n- Voucher không đổi thành tiền mặt và không chuyển nhượng.\n- Voucher không áp dụng cho nạp tiền, chuyển tiền và thanh toán hóa đơn."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Điểm có hiệu lực 12 tháng kể từ ngày nhận và được trừ trực tiếp vào lần thanh toán tiếp theo.",
+    "source": 2,
+    "quote": "Điểm có hiệu lực 12 tháng kể từ ngày nhận và được trừ trực tiếp vào lần thanh toán tiếp theo."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 487,
+  "completion_tokens": 341,
+  "total_tokens": 828
+ },
+ "latency_ms": 1161
+}

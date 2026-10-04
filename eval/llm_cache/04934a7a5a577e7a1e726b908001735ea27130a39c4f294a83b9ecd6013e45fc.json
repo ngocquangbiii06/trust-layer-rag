@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Chuyển tiền từ ví sang ví có mất phí không?",
+ "passages": [
+  "Chuyển tiền\n- Chuyển từ ví sang ví Ví Mây: miễn phí, không giới hạn số lần.\n- Chuyển tiền ra ngoài hệ thống (tới tài khoản ngân hàng không liên kết): 3.300 đồng mỗi giao dịch.",
+  "Phí\nViệc xử lý yêu cầu chuyển nhầm không thu phí.",
+  "Phí duy trì\nVí Mây không thu phí duy trì tài khoản.",
+  "Báo cáo\nNgười chuyển nhầm cần báo qua mục Hỗ trợ trong vòng 24 giờ kể từ khi chuyển để Ví Mây có thể hỗ trợ tạm giữ khoản tiền nếu chưa bị sử dụng."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Chuyển từ ví sang ví Ví Mây: miễn phí, không giới hạn số lần.",
+    "source": 1,
+    "quote": "Chuyển từ ví sang ví Ví Mây: miễn phí, không giới hạn số lần."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 474,
+  "completion_tokens": 187,
+  "total_tokens": 661
+ },
+ "latency_ms": 5762
+}

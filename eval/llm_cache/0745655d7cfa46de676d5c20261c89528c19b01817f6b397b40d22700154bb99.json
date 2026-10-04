@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Tôi đang ở cấp 1, muốn rút tiền về ngân hàng thì có được không và mất phí bao nhiêu?",
+ "passages": [
+  "Rút tiền về ngân hàng đã liên kết\n- Phí 0,1% giá trị giao dịch, tối thiểu 1.000 đồng và tối đa 10.000 đồng.\n- Mỗi tháng được miễn phí 3 lần rút đầu tiên. Từ lần thứ tư trở đi áp dụng phí như trên.",
+  "Cấp 1: chỉ xác thực số điện thoại\n- Số dư ví tối đa: 10.000.000 đồng.\n- Tổng giao dịch mỗi ngày: 5.000.000 đồng.\n- Không được chuyển tiền ra ngoài hệ thống Ví Mây và không được rút về ngân hàng.",
+  "Chuyển tiền\n- Chuyển từ ví sang ví Ví Mây: miễn phí, không giới hạn số lần.\n- Chuyển tiền ra ngoài hệ thống (tới tài khoản ngân hàng không liên kết): 3.300 đồng mỗi giao dịch.",
+  "Cấp 2: đã xác thực căn cước công dân và khuôn mặt\n- Số dư ví tối đa: 100.000.000 đồng.\n- Tổng giao dịch mỗi ngày: 50.000.000 đồng.\n- Được chuyển tiền ra ngoài và rút về ngân hàng đã liên kết."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Không được rút về ngân hàng",
+    "source": 2,
+    "quote": "Không được chuyển tiền ra ngoài hệ thống Ví Mây và không được rút về ngân hàng."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 608,
+  "completion_tokens": 240,
+  "total_tokens": 848
+ },
+ "latency_ms": 1121
+}

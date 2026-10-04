@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Điểm thưởng mua sắm dùng được đến khi nào?",
+ "passages": [
+  "Hạn sử dụng\nMỗi voucher có hiệu lực 30 ngày kể từ ngày nhận, trừ khi chương trình ghi khác.",
+  "Sử dụng điểm\nĐiểm có hiệu lực 12 tháng kể từ ngày nhận và được trừ trực tiếp vào lần thanh toán tiếp theo. Điểm không đổi được thành tiền mặt và không chuyển cho người khác.",
+  "Khi giao dịch bị hủy\nNếu giao dịch dùng voucher bị hủy hoặc hoàn tiền, voucher được trả lại nếu còn hạn sử dụng. Voucher đã hết hạn không được cấp lại.",
+  "Quy tắc sử dụng\n- Mỗi giao dịch chỉ dùng được 1 voucher.\n- Voucher không đổi thành tiền mặt và không chuyển nhượng.\n- Voucher không áp dụng cho nạp tiền, chuyển tiền và thanh toán hóa đơn."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Điểm có hiệu lực 12 tháng kể từ ngày nhận.",
+    "source": 2,
+    "quote": "Điểm có hiệu lực 12 tháng kể từ ngày nhận và được trừ trực tiếp vào lần thanh toán tiếp theo. Điểm không đổi được thành tiền mặt và không chuyển cho người khác."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 501,
+  "completion_tokens": 393,
+  "total_tokens": 894
+ },
+ "latency_ms": 7427
+}

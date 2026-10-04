@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Quét mã trả tiền ở quán cà phê thì tối đa bao nhiêu một lần với tài khoản đã xác thực căn cước?",
+ "passages": [
+  "Hoàn điểm thanh toán\nMỗi giao dịch thanh toán QR tại cửa hàng đối tác được hoàn điểm bằng 1% giá trị giao dịch. Tổng điểm hoàn tối đa 50.000 điểm mỗi tháng. 1 điểm quy đổi 1 đồng.",
+  "Hạn mức mỗi giao dịch QR\n- Tài khoản cấp 1: tối đa 2.000.000 đồng mỗi giao dịch.\n- Tài khoản cấp 2 trở lên: tối đa 20.000.000 đồng mỗi giao dịch.",
+  "Hạn mức giao dịch theo cấp xác thực\nVí Mây chia tài khoản thành ba cấp xác thực. Hạn mức áp dụng từ phiên bản chính sách 10/2026.",
+  "Cấp 2: đã xác thực căn cước công dân và khuôn mặt\n- Số dư ví tối đa: 100.000.000 đồng.\n- Tổng giao dịch mỗi ngày: 50.000.000 đồng.\n- Được chuyển tiền ra ngoài và rút về ngân hàng đã liên kết."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "20.000.000 đồng",
+    "source": 2,
+    "quote": "Tài khoản cấp 2 trở lên: tối đa 20.000.000 đồng mỗi giao dịch."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 567,
+  "completion_tokens": 317,
+  "total_tokens": 884
+ },
+ "latency_ms": 1826
+}

@@ -38,6 +38,11 @@ class Stage:
     label: str
     loader: Callable[[], tuple[list, list[dict]]]  # returns the chunks and the questions
     top_k: int  # passages sent to the model per question
+    embed_model: str = DEFAULT_MODEL
+    rerank_model: str | None = None
+
+    def retriever(self, chunks: list) -> Retriever:
+        return Retriever(chunks, self.embed_model, self.rerank_model)
 
 
 def _vimay() -> tuple[list, list[dict]]:
@@ -47,7 +52,11 @@ def _vimay() -> tuple[list, list[dict]]:
 # Later work packages register L1 (legal dev set), L2 (attacks, judge) and L3 (held-out set) here.
 STAGES: dict[str, Stage] = {
     "L0": Stage("60 questions about the fictional Vi May policies, 4 passages per question", _vimay, 4),
-    "L0b": Stage("the same 60 questions, 6 passages per question (the one tuning round)", _vimay, 6),
+    "L0b": Stage("the same 60 questions, 6 passages per question (tuning round 1)", _vimay, 6),
+    "L0c": Stage("the same 60 questions, 4 passages, mpnet embeddings + cross-encoder reranker "
+                 "(tuning round 2)", _vimay, 4,
+                 "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
+                 "jinaai/jina-reranker-v2-base-multilingual"),
 }
 
 
@@ -55,14 +64,13 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument("--stage", choices=sorted(STAGES), required=True)
     parser.add_argument("--sleep", type=float, default=3.0, help="seconds to wait after each live call")
-    parser.add_argument("--model", default=DEFAULT_MODEL, help="embedding model for retrieval")
     parser.add_argument("--dry-run", action="store_true", help="count the missing replies and stop")
     parser.add_argument("--results-dir", type=Path, default=ROOT / "results")
     args = parser.parse_args()
 
     stage = STAGES[args.stage]
     chunks, questions = stage.loader()
-    retriever = Retriever(chunks, args.model)
+    retriever = stage.retriever(chunks)
 
     probe = run(build_llm("cached"), True, 0.0, retriever, questions, stage.top_k)
     missing = probe["cache"]["misses"]

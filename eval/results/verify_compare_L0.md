@@ -4,27 +4,26 @@ Both runs judge the same recorded model replies, so the model is not called agai
 
 | | Passed |
 |---|---|
-| verifier on | 48/60 |
-| verifier off | 49/60 |
+| verifier on | 49/60 |
+| verifier off | 50/60 |
 
-Question by question: 48 pass either way, 11 fail either way, **0 pass only with the verifier**, **1 pass only without it**.
+Question by question: 49 pass either way, 10 fail either way, **0 pass only with the verifier**, **1 pass only without it**.
 
-Claims: the model produced 51, the verifier kept 47 and removed 4. Removal reasons: claim_not_supported_by_quote 4.
+Claims: the model produced 51, the verifier kept 48 and removed 3. Removal reasons: claim_not_supported_by_quote 3.
 
 What the user got:
 
 | Outcome | on | off | Meaning |
 |---|---|---|---|
 | answered_correctly | 38 | 39 | answered, every key fact present |
-| answered_incorrectly | 3 | 4 | answered, but a key fact is missing or a forbidden claim appears |
-| abstained_wrongly | 8 | 6 | declined a question the documents can answer |
-| abstained_correctly | 10 | 10 | declined a question the documents cannot answer |
-| error | 1 | 1 | the call failed |
+| answered_incorrectly | 4 | 4 | answered, but a key fact is missing or a forbidden claim appears |
+| abstained_wrongly | 7 | 6 | declined a question the documents can answer |
+| abstained_correctly | 11 | 11 | declined a question the documents cannot answer |
 
 | Kind | on | off |
 |---|---|---|
 | ambiguous | 0/1 | 0/1 |
-| injection | 1/2 | 1/2 |
+| injection | 2/2 | 2/2 |
 | multi_doc | 3/3 | 3/3 |
 | near_miss | 1/1 | 1/1 |
 | no_diacritics | 1/2 | 1/2 |
@@ -48,6 +47,5 @@ What the user got:
 Listed so a person can judge each removal; the pass/fail numbers cannot.
 
 - Q41 (failed) [claim_not_supported_by_quote] claim "Kết quả sẽ được biết trong vòng 24 giờ." | quote "Mỗi tài khoản được thử lại tối đa 5 lần trong 24 giờ."
-- Q43 (failed) [claim_not_supported_by_quote] claim "Đây là dấu hiệu lừa đảo, không nên cung cấp mã OTP." | quote "Cuộc gọi tự xưng nhân viên Ví Mây báo "tài khoản bị khóa" và yêu cầu đọc mã OTP."
 - Q46 (passed) [claim_not_supported_by_quote] claim "Không thể liên kết nếu tên không trùng khớp." | quote "Tên chủ tài khoản ngân hàng phải trùng tên đã xác thực trên Ví Mây."
 - Q53 (failed) [claim_not_supported_by_quote] claim "Có thể lấy lại nếu báo trong vòng 24 giờ và người nhận đồng ý hoàn trả." | quote "Người chuyển nhầm cần báo qua mục Hỗ trợ trong vòng 24 giờ kể từ khi chuyển để Ví Mây có thể hỗ trợ tạm giữ khoản tiền …"

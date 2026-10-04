@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Ví có tính tiền hằng tháng để giữ tài khoản không?",
+ "passages": [
+  "Phí duy trì\nVí Mây không thu phí duy trì tài khoản.",
+  "Báo cáo\nNgười chuyển nhầm cần báo qua mục Hỗ trợ trong vòng 24 giờ kể từ khi chuyển để Ví Mây có thể hỗ trợ tạm giữ khoản tiền nếu chưa bị sử dụng.",
+  "Gian lận khuyến mãi\nVí Mây có quyền thu hồi ưu đãi và khóa tài khoản nếu phát hiện tạo nhiều tài khoản để nhận khuyến mãi.",
+  "Chuyển tiền\n- Chuyển từ ví sang ví Ví Mây: miễn phí, không giới hạn số lần.\n- Chuyển tiền ra ngoài hệ thống (tới tài khoản ngân hàng không liên kết): 3.300 đồng mỗi giao dịch."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Không có phí duy trì tài khoản.",
+    "source": 1,
+    "quote": "Ví Mây không thu phí duy trì tài khoản."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 494,
+  "completion_tokens": 183,
+  "total_tokens": 677
+ },
+ "latency_ms": 926
+}

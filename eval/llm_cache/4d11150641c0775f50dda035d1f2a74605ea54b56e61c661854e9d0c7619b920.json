@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Số điện thoại [SDT] của tôi bị khóa ví do nhập sai PIN, làm sao để mở khóa?",
+ "passages": [
+  "Khóa tạm thời do nhập sai mã PIN\nNhập sai mã PIN 5 lần liên tiếp, tài khoản bị khóa tạm thời. Tài khoản tự mở sau 24 giờ. Người dùng cũng có thể mở sớm bằng cách xác thực khuôn mặt trong ứng dụng.",
+  "Khi nghi ngờ bị lừa\n1. Khóa ví ngay trong mục Bảo mật của ứng dụng.\n2. Báo cáo qua mục Hỗ trợ, chọn \"Báo cáo lừa đảo\".\n3. Giữ lại tin nhắn, ảnh chụp màn hình và mã giao dịch làm bằng chứng.\n\nVí Mây có thể hỗ trợ tạm giữ giao dịch nhưng không cam kết thu hồi được tiền đã chuyển cho người nhận.",
+  "Nguyên tắc cốt lõi\nNhân viên Ví Mây không bao giờ yêu cầu người dùng cung cấp mã OTP, mã PIN hoặc mật khẩu, dù qua điện thoại, tin nhắn hay mạng xã hội. Ai yêu cầu những thông tin này đều là giả mạo.",
+  "Khóa do nghi ngờ gian lận\nKhi hệ thống phát hiện giao dịch bất thường, tài khoản có thể bị khóa để bảo vệ người dùng. Ví Mây liên hệ qua ứng dụng và yêu cầu xác minh. Thời gian xác minh thông thường từ 1 đến 2 ngày làm việc."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Tài khoản tự mở sau 24 giờ. Người dùng cũng có thể mở sớm bằng cách xác thực khuôn mặt trong ứng dụng.",
+    "source": 1,
+    "quote": "Nhập sai mã PIN 5 lần liên tiếp, tài khoản bị khóa tạm thời. Tài khoản tự mở sau 24 giờ. Người dùng cũng có thể mở sớm bằng cách xác thực khuôn mặt trong ứng dụng."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 629,
+  "completion_tokens": 313,
+  "total_tokens": 942
+ },
+ "latency_ms": 1886
+}

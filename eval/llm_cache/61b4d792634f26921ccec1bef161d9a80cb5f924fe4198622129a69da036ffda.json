@@ -1,0 +1,32 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Mình ghi sai tên chủ tài khoản thì liên kết ngân hàng có được không?",
+ "passages": [
+  "Lỗi liên kết thường gặp\n- Tên không trùng khớp: kiểm tra lại họ tên trên cả hai nơi.\n- Ngân hàng chưa đăng ký dịch vụ ngân hàng điện tử: đăng ký với ngân hàng trước.\n- Quá số lần nhập sai thông tin: chờ 24 giờ rồi thử lại.",
+  "Điều kiện\nTài khoản phải đạt cấp 2 (đã xác thực căn cước công dân và khuôn mặt) trước khi liên kết ngân hàng. Tên chủ tài khoản ngân hàng phải trùng tên đã xác thực trên Ví Mây.",
+  "Thay đổi thông tin\nNgười dùng cần xác thực lại nếu đổi số căn cước hoặc họ tên.",
+  "Hủy liên kết\nVào mục Ngân hàng liên kết, chọn tài khoản và bấm Hủy liên kết. Việc hủy có hiệu lực ngay. Nếu đang có giao dịch chưa hoàn tất qua tài khoản đó, hệ thống chỉ hủy sau khi giao dịch kết thúc."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Không được liên kết nếu tên không trùng khớp.",
+    "source": 1,
+    "quote": "Tên không trùng khớp: kiểm tra lại họ tên trên cả hai nơi."
+   },
+   {
+    "text": "Tên chủ tài khoản ngân hàng phải trùng tên đã xác thực trên Ví Mây.",
+    "source": 2,
+    "quote": "Tên chủ tài khoản ngân hàng phải trùng tên đã xác thực trên Ví Mây."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 548,
+  "completion_tokens": 404,
+  "total_tokens": 952
+ },
+ "latency_ms": 1679
+}

@@ -91,77 +91,69 @@ Source: [`eval/results/answers_extractive.md`](eval/results/answers_extractive.m
 
 ### End to end, live language model
 
-`openai/gpt-oss-20b` through Groq, temperature 0, 4 passages per question (the default). Verifier on
-and off judge the same recorded replies, so the difference is caused by the verifier alone.
+`openai/gpt-oss-20b` through Groq, temperature 0, 4 passages per question. Verifier on and off judge
+the same recorded replies, so any difference is caused by the verifier alone.
 
-| | verifier on | verifier off |
-|---|---|---|
-| **questions passed** | **48/60** | **49/60** |
-| answered correctly | 38 | 39 |
-| answered, but a key fact is missing | 3 | 4 |
-| declined a question the documents can answer | 8 | 6 |
-| declined a question the documents cannot answer (correct) | 10/11 | 10/11 |
-| call failed | 1 | 1 |
+| Retrieval configuration | verifier on | verifier off | ceiling* |
+|---|---|---|---|
+| A. MiniLM embeddings, 4 passages (first version, small and fast) | 49/60 | 50/60 | 38/49 |
+| B. MiniLM embeddings, 6 passages | 48/60 | 49/60 | 44/49 |
+| **C. mpnet embeddings + cross-encoder reranker, 4 passages** | **53/60** | **53/60** | 46/49 |
+| no language model (extractive baseline, configuration A) | 23/60 | | |
 
-By group, verifier on: plain 20/20, paraphrased 11/20, unanswerable 7/7, out of scope 2/2,
-multi-document 3/3, personal data 2/2, prompt injection 1/2, no diacritics 1/2.
-Raw personal data reaching the model, the audit log or the reply cache: **0 of 2** values.
-Median model latency 1.9 s. Sources: [`answers_live_L0.md`](eval/results/answers_live_L0.md),
-[`answers_live_L0_noverify.md`](eval/results/answers_live_L0_noverify.md),
-[`verify_compare_L0.md`](eval/results/verify_compare_L0.md).
+\* ceiling: answerable questions whose every key fact is written in the passages sent to the model.
+No prompt or verifier can beat it. Measured offline, see
+[`retrieval_compare.md`](eval/results/retrieval_compare.md).
+
+Configuration C by group (verifier on): plain 20/20, paraphrased 16/20, unanswerable 7/7, out of
+scope 2/2, prompt injection 2/2, personal data 2/2, multi-document 2/3, no diacritics 1/2,
+ambiguous 0/1. It declined all 11 questions that have no answer in the documents.
+Raw personal data reaching the model, the audit log or the reply cache: **0 of 2** values, in every run.
+Sources: `eval/results/answers_live_L0.md` (A), `answers_live_L0b.md` (B), `answers_live_L0c.md` (C),
+each with a `_noverify` twin, plus `failures_*.md` and `verify_compare_*.md`.
 
 **What the numbers say, including the unflattering parts:**
 
-- **The model adds a lot** over the no-model baseline: 48/60 against 23/60.
-- **The verifier did not raise the pass count here.** It removed 4 of 51 claims. Reading them by
-  hand (one reader, not a labelled set): 1 was a wrong claim built on an unrelated quote, 3 were
-  reasonable paraphrases. The word-overlap rule punishes paraphrase. Its real effect is to turn a
-  shown answer into a refusal: one fewer incomplete answer shown, two more wrong refusals.
-- **Retrieval is the bottleneck, not the model.** Of the 12 failures, 10 are questions where the
-  chunk holding the answer was not among the 4 passages sent to the model, so declining was the
-  right behaviour. The key facts are present in the top 4 passages for only 39 of 49 answerable
-  questions; that is the ceiling for any prompt. See [`failures_L0.md`](eval/results/failures_L0.md).
-- **One prompt-injection question ends in an error, not a clean refusal.** The model refused in
-  plain text, the API rejected that as invalid JSON, and the pipeline raised an error. Nothing
-  leaked, but it is counted as a failure and the pipeline should fail closed instead.
+- **Retrieval was the bottleneck, not the model.** In configuration A, 10 of the 11 failures were
+  questions where the chunk holding the answer was not among the 4 passages sent to the model, so
+  declining was the right behaviour. That finding is what pointed to the fix.
+- **Sending more passages did not help (B).** The ceiling rose but the model answered one
+  unanswerable question and the verifier removed more correct claims.
+- **A better embedding model plus a reranker did (C)**: the right chunk reaches the top 4 far more
+  often, and the pass count went from 49 to 53. The cost is latency: about 5 s per question for
+  retrieval and reranking on a laptop CPU, against about 20 ms for A.
+- **The verifier has not shown a benefit on this set.** In A it removed 3 of 51 claims: one was a
+  wrong claim built on an unrelated quote, two were reasonable paraphrases (one reader's judgement,
+  not a labelled set). In C it removed nothing, so on and off agree. It guards against a failure
+  this small model rarely produced here; its value is unproven until there is a harder test set.
+- **Two of C's seven failures are right answers that the scorer rejects**: "không có cam kết" where
+  the expected string is "không cam kết", and "không có phí duy trì" for "không thu phí". The
+  labels were left as they are.
+- **This run found three bugs, now fixed**: the verifier rejected correctly copied quotes that
+  differed in quote marks or list bullets; it ignored the section heading as support; and a model
+  refusing a prompt injection in plain text surfaced as an HTTP error instead of a clean refusal.
+  The numbers above are after those fixes; the same recorded replies were re-judged.
 
-### One tuning round, and it did not help
-
-Because the ceiling rises to 44/49 with 6 passages, the single change tried was sending 6 passages
-instead of 4. The decision rule was written down before the run: keep 6 only if it passes more
-questions with the verifier on.
-
-| passages per question | verifier on | verifier off | no-model baseline |
-|---|---|---|---|
-| 4 (kept as default) | 48/60 | 49/60 | 23/60 |
-| 6 | 45/60 | 48/60 | 22/60 |
-
-More passages put the answer in front of the model more often (retrieval misses fell from 10 to
-5), but the model also answered one unanswerable question, and the verifier wrongly removed more
-claims (3 questions pass only with the verifier off). Four of those removals were quotes the model
-copied correctly except for quote marks or a line break, which the exact-match check rejects: a
-verifier bug found by this run and not yet fixed. Sources:
-[`answers_live_L0b.md`](eval/results/answers_live_L0b.md),
-[`failures_L0b.md`](eval/results/failures_L0b.md),
-[`verify_compare_L0b.md`](eval/results/verify_compare_L0b.md).
+The default configuration of the service and of the container stays A, because C needs 2 GB of
+extra models and seconds per query. C is selected by passing the two model names to `Retriever`.
 
 ## Limitations
 
 - **The data is fictional.** 12 invented documents. Results say nothing about real policies.
-- **Tuning and scoring use the same 60 questions.** There is no held-out set for this corpus, and
-  the one tuning round above was chosen and judged on these same questions, so the numbers are
-  optimistic. Scoring is by key-fact matching, which cannot tell whether an answer is otherwise right. Documents, questions and expected answers were drafted by a single source
+- **Tuning and scoring use the same 60 questions.** There is no held-out set for this corpus.
+  Configurations B and C and the verifier fixes were all chosen and judged on these same questions,
+  so 53/60 is optimistic. Scoring is by key-fact matching, which cannot tell whether an answer is otherwise right. Documents, questions and expected answers were drafted by a single source
   with AI assistance and have not been independently reviewed. The first 35 questions reused the
   documents' own wording and made keyword search look better than it is; the other 25 were added to
   expose that.
 - **Small sample.** 60 questions, 49 of them answerable; one question is 1.7 percentage points.
 - **Personal-data masking is regex-based.** It does not catch names or addresses, numbers of 17 or
   more digits, landline numbers, or unusual spellings of phone numbers.
-- **The verifier is rule-based.** It checks quotes, numbers and word overlap, not meaning. On the
-  live run it rejected correct paraphrases and correctly copied quotes that differed only in quote
-  marks or line breaks, and it does not detect negation.
+- **The verifier is rule-based.** It checks quotes, numbers and word overlap, not meaning. It can
+  reject a correct paraphrase and it does not detect negation.
 - **One model, one run.** A single 20B open-weight model at temperature 0; no repeat runs.
-- **Retrieval has only been tried with the smallest embedding model**, and no reranker.
+- **The reranker model (`jinaai/jina-reranker-v2-base-multilingual`) is licensed CC BY-NC 4.0**,
+  non-commercial use only.
 - **A legal-document corpus is in progress** (the 2025 Personal Data Protection Law and the
   consolidated State Bank circular on payment intermediary services, chunked by Article and Clause).
   None of the numbers above use it.
@@ -195,7 +187,9 @@ python -m eval.retrieval_eval                    # retrieval table above
 python -m eval.answer_eval --llm extractive      # offline baseline table above
 python -m eval.answer_eval --llm cached          # replay recorded model replies, no key needed
 python -m eval.live --stage L0                   # 4 passages; replays the recorded replies, no key needed
-python -m eval.live --stage L0b                  # 6 passages (the tuning round)
+python -m eval.live --stage L0b                  # configuration B
+python -m eval.live --stage L0c                  # configuration C (downloads about 2 GB of models)
+python -m eval.retrieval_compare                 # six retrieval configurations, no language model
 python -m eval.failures --tag L0                 # group failures by cause, compare verifier on/off
 ```
 

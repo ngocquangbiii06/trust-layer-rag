@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Literal
 
 from fastembed import TextEmbedding
+from fastembed.rerank.cross_encoder import TextCrossEncoder
 from qdrant_client import QdrantClient, models
 
 from app.bm25 import BM25
@@ -31,12 +32,17 @@ def embed_text(chunk: Chunk) -> str:
 
 
 class Retriever:
-    def __init__(self, chunks: list[Chunk], model_name: str = DEFAULT_MODEL) -> None:
+    def __init__(self, chunks: list[Chunk], model_name: str = DEFAULT_MODEL,
+                 rerank_model: str | None = None, rerank_pool: int = 20) -> None:
         self.chunks = chunks
         self.model_name = model_name
         self._model = TextEmbedding(model_name, cache_dir=str(CACHE_DIR))
+        # E5 models were trained with these prefixes; fastembed does not add them.
+        self._query_prefix, self._passage_prefix = ("query: ", "passage: ") if "e5" in model_name else ("", "")
+        self._reranker = TextCrossEncoder(rerank_model, cache_dir=str(CACHE_DIR)) if rerank_model else None
+        self._rerank_pool = rerank_pool
         self._bm25 = BM25([embed_text(c) for c in chunks])
-        vectors = list(self._model.embed([embed_text(c) for c in chunks]))
+        vectors = list(self._model.embed([self._passage_prefix + embed_text(c) for c in chunks]))
         self._client = QdrantClient(":memory:")
         self._client.create_collection(
             _COLLECTION,
@@ -51,12 +57,23 @@ class Retriever:
         )
 
     def _dense(self, query: str, k: int) -> list[tuple[int, float]]:
-        vector = next(iter(self._model.embed([query]))).tolist()
+        vector = next(iter(self._model.embed([self._query_prefix + query]))).tolist()
         response = self._client.query_points(_COLLECTION, query=vector, limit=k)
         return [(int(p.id), float(p.score)) for p in response.points]
 
+    def _rerank(self, query: str, ids: list[int], k: int) -> list[tuple[int, float]]:
+        """Score each (query, passage) pair with the cross-encoder and keep the best k."""
+        scores = list(self._reranker.rerank(query, [embed_text(self.chunks[i]) for i in ids]))
+        return sorted(zip(ids, map(float, scores), strict=True), key=lambda pair: -pair[1])[:k]
+
     def search(self, query: str, k: int = 5, mode: Mode = "hybrid") -> list[Hit]:
-        if mode == "dense":
+        if self._reranker and mode == "hybrid":
+            pool = max(self._rerank_pool, k)
+            dense_ids = [i for i, _ in self._dense(query, pool)]
+            sparse_ids = [i for i, _ in self._bm25.top(query, pool)]
+            candidates = [i for i, _ in rrf([dense_ids, sparse_ids])[:pool]]
+            ranked = self._rerank(query, candidates, k)
+        elif mode == "dense":
             ranked = self._dense(query, k)
         elif mode == "bm25":
             ranked = self._bm25.top(query, k)

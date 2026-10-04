@@ -1,0 +1,21 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "han muc giao dich moi ngay cua tai khoan cap 2 la bao nhieu",
+ "passages": [
+  "Lưu ý\nHạn mức mỗi ngày được tính từ 00:00 đến 23:59 theo giờ Việt Nam. Khi đạt hạn mức, giao dịch tiếp theo bị từ chối và người dùng được thông báo trong ứng dụng.",
+  "Chuyển tiền\n- Chuyển từ ví sang ví Ví Mây: miễn phí, không giới hạn số lần.\n- Chuyển tiền ra ngoài hệ thống (tới tài khoản ngân hàng không liên kết): 3.300 đồng mỗi giao dịch.",
+  "Quy trình xử lý\n1. Ví Mây ghi nhận yêu cầu và liên hệ người nhận trong ứng dụng.\n2. Nếu người nhận đồng ý hoàn trả, tiền được hoàn về người gửi trong 3 ngày làm việc.\n3. Nếu người nhận không đồng ý, Ví Mây không có quyền tự ý lấy lại tiền. Người gửi có thể nhờ cơ quan chức năng giải quyết.",
+  "Hạn mức mỗi giao dịch QR\n- Tài khoản cấp 1: tối đa 2.000.000 đồng mỗi giao dịch.\n- Tài khoản cấp 2 trở lên: tối đa 20.000.000 đồng mỗi giao dịch."
+ ],
+ "reply": {
+  "answerable": false,
+  "claims": []
+ },
+ "usage": {
+  "prompt_tokens": 583,
+  "completion_tokens": 252,
+  "total_tokens": 835
+ },
+ "latency_ms": 1886
+}

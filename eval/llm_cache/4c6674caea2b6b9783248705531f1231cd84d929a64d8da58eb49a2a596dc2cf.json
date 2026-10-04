@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Chuyển nhầm tiền thì phải báo trong vòng bao lâu?",
+ "passages": [
+  "Báo cáo\nNgười chuyển nhầm cần báo qua mục Hỗ trợ trong vòng 24 giờ kể từ khi chuyển để Ví Mây có thể hỗ trợ tạm giữ khoản tiền nếu chưa bị sử dụng.",
+  "Hoàn tiền\n- Giao dịch bị trừ tiền nhưng lỗi kỹ thuật: hoàn tiền trong vòng 3 ngày làm việc.\n- Đơn hàng bị hủy sau khi đã thanh toán qua ví: hoàn tiền trong 5 đến 7 ngày làm việc, tùy đối tác bán hàng.\n- Tiền hoàn về nguồn đã dùng để thanh toán. Thanh toán bằng ví thì hoàn về ví.",
+  "Sử dụng điểm\nĐiểm có hiệu lực 12 tháng kể từ ngày nhận và được trừ trực tiếp vào lần thanh toán tiếp theo. Điểm không đổi được thành tiền mặt và không chuyển cho người khác.",
+  "Quy trình xử lý\n1. Ví Mây ghi nhận yêu cầu và liên hệ người nhận trong ứng dụng.\n2. Nếu người nhận đồng ý hoàn trả, tiền được hoàn về người gửi trong 3 ngày làm việc.\n3. Nếu người nhận không đồng ý, Ví Mây không có quyền tự ý lấy lại tiền. Người gửi có thể nhờ cơ quan chức năng giải quyết."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "24 giờ",
+    "source": 1,
+    "quote": "Người chuyển nhầm cần báo qua mục Hỗ trợ trong vòng 24 giờ kể từ khi chuyển để Ví Mây có thể hỗ trợ tạm giữ khoản tiền nếu chưa bị sử dụng."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 595,
+  "completion_tokens": 265,
+  "total_tokens": 860
+ },
+ "latency_ms": 1170
+}

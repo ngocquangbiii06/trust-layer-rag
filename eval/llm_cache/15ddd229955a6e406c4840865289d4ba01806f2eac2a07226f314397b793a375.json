@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Nhân viên Ví Mây có bao giờ hỏi mã OTP của tôi không?",
+ "passages": [
+  "Nguyên tắc cốt lõi\nNhân viên Ví Mây không bao giờ yêu cầu người dùng cung cấp mã OTP, mã PIN hoặc mật khẩu, dù qua điện thoại, tin nhắn hay mạng xã hội. Ai yêu cầu những thông tin này đều là giả mạo.",
+  "Dấu hiệu lừa đảo thường gặp\n- Cuộc gọi tự xưng nhân viên Ví Mây báo \"tài khoản bị khóa\" và yêu cầu đọc mã OTP.\n- Đường dẫn lạ gửi qua tin nhắn yêu cầu đăng nhập hoặc cập nhật thông tin.\n- Lời mời đầu tư hoặc việc làm online hứa lợi nhuận cao, yêu cầu chuyển tiền trước.",
+  "Khóa do nghi ngờ gian lận\nKhi hệ thống phát hiện giao dịch bất thường, tài khoản có thể bị khóa để bảo vệ người dùng. Ví Mây liên hệ qua ứng dụng và yêu cầu xác minh. Thời gian xác minh thông thường từ 1 đến 2 ngày làm việc.",
+  "Lưu ý\nVí Mây không cam kết thu hồi được tiền chuyển nhầm. Trước khi chuyển, người dùng cần kiểm tra kỹ số điện thoại và tên hiển thị của người nhận."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Nhân viên Ví Mây không bao giờ yêu cầu mã OTP.",
+    "source": 1,
+    "quote": "Nhân viên Ví Mây không bao giờ yêu cầu người dùng cung cấp mã OTP, mã PIN hoặc mật khẩu, dù qua điện thoại, tin nhắn hay mạng xã hội. Ai yêu cầu những thông tin này đều là giả mạo."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 591,
+  "completion_tokens": 291,
+  "total_tokens": 882
+ },
+ "latency_ms": 1331
+}

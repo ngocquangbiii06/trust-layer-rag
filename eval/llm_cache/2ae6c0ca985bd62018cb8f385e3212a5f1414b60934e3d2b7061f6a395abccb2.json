@@ -1,0 +1,21 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Ví Mây có cho vay tiền không?",
+ "passages": [
+  "Quy trình xử lý\n1. Ví Mây ghi nhận yêu cầu và liên hệ người nhận trong ứng dụng.\n2. Nếu người nhận đồng ý hoàn trả, tiền được hoàn về người gửi trong 3 ngày làm việc.\n3. Nếu người nhận không đồng ý, Ví Mây không có quyền tự ý lấy lại tiền. Người gửi có thể nhờ cơ quan chức năng giải quyết.",
+  "Lưu ý\nVí Mây không cam kết thu hồi được tiền chuyển nhầm. Trước khi chuyển, người dùng cần kiểm tra kỹ số điện thoại và tên hiển thị của người nhận.",
+  "Khi nghi ngờ bị lừa\n1. Khóa ví ngay trong mục Bảo mật của ứng dụng.\n2. Báo cáo qua mục Hỗ trợ, chọn \"Báo cáo lừa đảo\".\n3. Giữ lại tin nhắn, ảnh chụp màn hình và mã giao dịch làm bằng chứng.\n\nVí Mây có thể hỗ trợ tạm giữ giao dịch nhưng không cam kết thu hồi được tiền đã chuyển cho người nhận.",
+  "Báo cáo\nNgười chuyển nhầm cần báo qua mục Hỗ trợ trong vòng 24 giờ kể từ khi chuyển để Ví Mây có thể hỗ trợ tạm giữ khoản tiền nếu chưa bị sử dụng."
+ ],
+ "reply": {
+  "answerable": false,
+  "claims": []
+ },
+ "usage": {
+  "prompt_tokens": 597,
+  "completion_tokens": 117,
+  "total_tokens": 714
+ },
+ "latency_ms": 1414
+}

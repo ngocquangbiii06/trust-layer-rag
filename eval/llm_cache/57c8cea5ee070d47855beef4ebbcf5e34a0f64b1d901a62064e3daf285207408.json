@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Một ví gắn được bao nhiêu thẻ ngân hàng?",
+ "passages": [
+  "Số lượng\nMỗi ví liên kết tối đa 3 tài khoản ngân hàng cùng lúc.",
+  "Quy tắc sử dụng\n- Mỗi giao dịch chỉ dùng được 1 voucher.\n- Voucher không đổi thành tiền mặt và không chuyển nhượng.\n- Voucher không áp dụng cho nạp tiền, chuyển tiền và thanh toán hóa đơn.",
+  "Cấp 3: đã liên kết ít nhất một ngân hàng\n- Số dư ví tối đa: 300.000.000 đồng.\n- Tổng giao dịch mỗi ngày: 200.000.000 đồng.",
+  "Cấp 1: chỉ xác thực số điện thoại\n- Số dư ví tối đa: 10.000.000 đồng.\n- Tổng giao dịch mỗi ngày: 5.000.000 đồng.\n- Không được chuyển tiền ra ngoài hệ thống Ví Mây và không được rút về ngân hàng."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Mỗi ví liên kết tối đa 3 tài khoản ngân hàng cùng lúc.",
+    "source": 1,
+    "quote": "Mỗi ví liên kết tối đa 3 tài khoản ngân hàng cùng lúc."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 521,
+  "completion_tokens": 220,
+  "total_tokens": 741
+ },
+ "latency_ms": 1035
+}

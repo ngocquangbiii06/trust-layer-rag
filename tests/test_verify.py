@@ -43,3 +43,15 @@ def test_bad_source_index_is_rejected():
 def test_quote_match_ignores_case_diacritics_and_spacing():
     claim = Claim("Phí rút là 0,1% giá trị giao dịch", 2, "phi 0,1%   gia tri giao dich")
     assert verify_claim(claim, PASSAGES).ok
+
+def test_quote_match_ignores_quote_marks_and_list_bullets():
+    passages = ['Khi nghi ngờ bị lừa\n- Khóa ví ngay trong mục Bảo mật.\n- Báo cáo qua mục Hỗ trợ, chọn "Báo cáo lừa đảo".']
+    joined = Claim("Khóa ví ngay rồi báo cáo lừa đảo", 1,
+                   "Khóa ví ngay trong mục Bảo mật. Báo cáo qua mục Hỗ trợ, chọn 'Báo cáo lừa đảo'.")
+    assert verify_claim(joined, passages).ok
+
+
+def test_quote_must_still_match_whole_words_in_order():
+    passages = ["Phí\nPhí rút tiền là 10.000 đồng, phí chuyển tiền là 3.300 đồng."]
+    assert verify_claim(Claim("Phí rút tiền là 3.300 đồng", 1, "Phí rút tiền là 3.300 đồng"), passages).reason == "quote_not_in_source"
+    assert verify_claim(Claim("Phí rút tiền là 10.000 đồng", 1, "phí rút tiền là 10.00"), passages).reason == "quote_not_in_source"
