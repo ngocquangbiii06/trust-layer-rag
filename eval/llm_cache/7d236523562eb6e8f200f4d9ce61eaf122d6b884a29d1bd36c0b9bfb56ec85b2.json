@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Ví Mây lưu dữ liệu giao dịch của tôi trong bao nhiêu năm?",
+ "passages": [
+  "Thời gian lưu trữ\nDữ liệu giao dịch được lưu 10 năm kể từ ngày phát sinh theo yêu cầu quản lý. Ảnh khuôn mặt và ảnh giấy tờ được lưu 5 năm sau khi tài khoản đóng.",
+  "Dữ liệu Ví Mây thu thập\nHọ tên, số điện thoại, thông tin giấy tờ định danh, ảnh khuôn mặt phục vụ xác thực và lịch sử giao dịch.",
+  "Quyền của người dùng\nNgười dùng có thể yêu cầu xem, sửa hoặc xóa dữ liệu. Yêu cầu được xử lý trong 30 ngày. Dữ liệu giao dịch thuộc diện bắt buộc lưu trữ không thể xóa trước hết thời hạn lưu.",
+  "Cấp 3: đã liên kết ít nhất một ngân hàng\n- Số dư ví tối đa: 300.000.000 đồng.\n- Tổng giao dịch mỗi ngày: 200.000.000 đồng."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Dữ liệu giao dịch được lưu 10 năm.",
+    "source": 1,
+    "quote": "Dữ liệu giao dịch được lưu 10 năm kể từ ngày phát sinh theo yêu cầu quản lý."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 537,
+  "completion_tokens": 322,
+  "total_tokens": 859
+ },
+ "latency_ms": 2265
+}

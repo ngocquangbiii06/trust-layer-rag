@@ -1,0 +1,21 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Hôm nay thời tiết ở Hà Nội thế nào?",
+ "passages": [
+  "Khiếu nại\n- Gửi khiếu nại trong vòng 60 ngày kể từ ngày phát sinh giao dịch. Quá hạn này, Ví Mây có quyền từ chối tiếp nhận.\n- Ví Mây phản hồi xác nhận đã nhận khiếu nại trong 24 giờ.\n- Thời gian xử lý: tối đa 15 ngày làm việc. Khiếu nại phức tạp cần phối hợp ngân hàng hoặc đối tác có thể kéo dài tới 30 ngày làm việc, và người dùng được thông báo lý do.",
+  "Thời gian xử lý\nPhần lớn hồ sơ được duyệt từ 15 phút đến 24 giờ. Hồ sơ cần kiểm tra thủ công có thể mất tới 3 ngày làm việc.",
+  "Thời gian xử lý\nYêu cầu đóng tài khoản được xử lý trong 7 ngày làm việc.",
+  "Báo cáo\nNgười chuyển nhầm cần báo qua mục Hỗ trợ trong vòng 24 giờ kể từ khi chuyển để Ví Mây có thể hỗ trợ tạm giữ khoản tiền nếu chưa bị sử dụng."
+ ],
+ "reply": {
+  "answerable": false,
+  "claims": []
+ },
+ "usage": {
+  "prompt_tokens": 558,
+  "completion_tokens": 108,
+  "total_tokens": 666
+ },
+ "latency_ms": 1274
+}

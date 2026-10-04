@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "CCCD của tôi là [CCCD], tôi cần làm gì để xác thực danh tính?",
+ "passages": [
+  "Dữ liệu Ví Mây thu thập\nHọ tên, số điện thoại, thông tin giấy tờ định danh, ảnh khuôn mặt phục vụ xác thực và lịch sử giao dịch.",
+  "Điều kiện\nTài khoản phải đạt cấp 2 (đã xác thực căn cước công dân và khuôn mặt) trước khi liên kết ngân hàng. Tên chủ tài khoản ngân hàng phải trùng tên đã xác thực trên Ví Mây.",
+  "Thay đổi thông tin\nNgười dùng cần xác thực lại nếu đổi số căn cước hoặc họ tên.",
+  "Sau khi đóng\nTài khoản không thể mở lại. Người dùng muốn dùng tiếp phải đăng ký tài khoản mới và xác thực lại. Dữ liệu được lưu theo thời hạn nêu trong chính sách quyền riêng tư."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Bạn cần xác thực căn cước công dân và khuôn mặt.",
+    "source": 2,
+    "quote": "đã xác thực căn cước công dân và khuôn mặt"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 509,
+  "completion_tokens": 504,
+  "total_tokens": 1013
+ },
+ "latency_ms": 2058
+}

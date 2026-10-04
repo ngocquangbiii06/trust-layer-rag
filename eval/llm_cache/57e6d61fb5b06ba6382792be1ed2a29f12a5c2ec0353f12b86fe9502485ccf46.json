@@ -1,0 +1,21 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Ví có bán thông tin của mình cho bên thứ ba không?",
+ "passages": [
+  "Khi nghi ngờ bị lừa\n1. Khóa ví ngay trong mục Bảo mật của ứng dụng.\n2. Báo cáo qua mục Hỗ trợ, chọn \"Báo cáo lừa đảo\".\n3. Giữ lại tin nhắn, ảnh chụp màn hình và mã giao dịch làm bằng chứng.\n\nVí Mây có thể hỗ trợ tạm giữ giao dịch nhưng không cam kết thu hồi được tiền đã chuyển cho người nhận.",
+  "Hạn mức giao dịch theo cấp xác thực\nVí Mây chia tài khoản thành ba cấp xác thực. Hạn mức áp dụng từ phiên bản chính sách 10/2026.",
+  "Thay đổi thông tin\nNgười dùng cần xác thực lại nếu đổi số căn cước hoặc họ tên.",
+  "Dữ liệu Ví Mây thu thập\nHọ tên, số điện thoại, thông tin giấy tờ định danh, ảnh khuôn mặt phục vụ xác thực và lịch sử giao dịch."
+ ],
+ "reply": {
+  "answerable": false,
+  "claims": []
+ },
+ "usage": {
+  "prompt_tokens": 537,
+  "completion_tokens": 239,
+  "total_tokens": 776
+ },
+ "latency_ms": 1011
+}

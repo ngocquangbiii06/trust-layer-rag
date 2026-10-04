@@ -1,0 +1,34 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Mình muốn xóa hết dữ liệu cá nhân, mất bao lâu và có xóa được tất cả không?",
+ "passages": [
+  "Quyền của người dùng\nNgười dùng có thể yêu cầu xem, sửa hoặc xóa dữ liệu. Yêu cầu được xử lý trong 30 ngày. Dữ liệu giao dịch thuộc diện bắt buộc lưu trữ không thể xóa trước hết thời hạn lưu.",
+  "Thời gian lưu trữ\nDữ liệu giao dịch được lưu 10 năm kể từ ngày phát sinh theo yêu cầu quản lý. Ảnh khuôn mặt và ảnh giấy tờ được lưu 5 năm sau khi tài khoản đóng.",
+  "Sau khi đóng\nTài khoản không thể mở lại. Người dùng muốn dùng tiếp phải đăng ký tài khoản mới và xác thực lại. Dữ liệu được lưu theo thời hạn nêu trong chính sách quyền riêng tư.",
+  "Cách thực hiện\n1. Rút hoặc chuyển hết số dư về ngân hàng đã liên kết.\n2. Vào Cài đặt, chọn Đóng tài khoản và xác nhận bằng khuôn mặt.",
+  "Khóa do nghi ngờ gian lận\nKhi hệ thống phát hiện giao dịch bất thường, tài khoản có thể bị khóa để bảo vệ người dùng. Ví Mây liên hệ qua ứng dụng và yêu cầu xác minh. Thời gian xác minh thông thường từ 1 đến 2 ngày làm việc.",
+  "Dữ liệu Ví Mây thu thập\nHọ tên, số điện thoại, thông tin giấy tờ định danh, ảnh khuôn mặt phục vụ xác thực và lịch sử giao dịch."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Bạn có thể yêu cầu xóa dữ liệu cá nhân và yêu cầu sẽ được xử lý trong 30 ngày.",
+    "source": 1,
+    "quote": "Người dùng có thể yêu cầu xem, sửa hoặc xóa dữ liệu. Yêu cầu được xử lý trong 30 ngày. Dữ liệu giao dịch thuộc diện bắt buộc lưu trữ không thể xóa trước hết thời hạn lưu."
+   },
+   {
+    "text": "Dữ liệu giao dịch không thể xóa trước hết thời hạn lưu, vì phải lưu trữ tối thiểu 10 năm.",
+    "source": 1,
+    "quote": "Người dùng có thể yêu cầu xem, sửa hoặc xóa dữ liệu. Yêu cầu được xử lý trong 30 ngày. Dữ liệu giao dịch thuộc diện bắt buộc lưu trữ không thể xóa trước hết thời hạn lưu."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 656,
+  "completion_tokens": 651,
+  "total_tokens": 1307
+ },
+ "latency_ms": 2386
+}

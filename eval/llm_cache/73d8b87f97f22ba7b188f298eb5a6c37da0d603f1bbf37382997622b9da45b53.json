@@ -1,0 +1,32 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Không dùng ví cả năm thì có sao không?",
+ "passages": [
+  "Hoàn tiền\n- Giao dịch bị trừ tiền nhưng lỗi kỹ thuật: hoàn tiền trong vòng 3 ngày làm việc.\n- Đơn hàng bị hủy sau khi đã thanh toán qua ví: hoàn tiền trong 5 đến 7 ngày làm việc, tùy đối tác bán hàng.\n- Tiền hoàn về nguồn đã dùng để thanh toán. Thanh toán bằng ví thì hoàn về ví.",
+  "Chuyển tiền\n- Chuyển từ ví sang ví Ví Mây: miễn phí, không giới hạn số lần.\n- Chuyển tiền ra ngoài hệ thống (tới tài khoản ngân hàng không liên kết): 3.300 đồng mỗi giao dịch.",
+  "Điều kiện\nSố dư ví phải bằng 0 và không có giao dịch hoặc khiếu nại đang xử lý. Điểm hoàn chưa dùng sẽ mất khi đóng tài khoản.",
+  "Sử dụng điểm\nĐiểm có hiệu lực 12 tháng kể từ ngày nhận và được trừ trực tiếp vào lần thanh toán tiếp theo. Điểm không đổi được thành tiền mặt và không chuyển cho người khác."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Điểm sẽ hết hạn sau 12 tháng kể từ ngày nhận.",
+    "source": 4,
+    "quote": "Điểm có hiệu lực 12 tháng kể từ ngày nhận và được trừ trực tiếp vào lần thanh toán tiếp theo."
+   },
+   {
+    "text": "Nếu đóng tài khoản, điểm chưa dùng sẽ mất.",
+    "source": 3,
+    "quote": "Điểm hoàn chưa dùng sẽ mất khi đóng tài khoản."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 559,
+  "completion_tokens": 599,
+  "total_tokens": 1158
+ },
+ "latency_ms": 8230
+}

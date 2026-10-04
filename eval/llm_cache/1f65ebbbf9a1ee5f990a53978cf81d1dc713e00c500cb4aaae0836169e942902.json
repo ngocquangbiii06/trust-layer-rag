@@ -1,0 +1,21 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Ví Mây có cho vay tiền không?",
+ "passages": [
+  "Chuyển tiền\n- Chuyển từ ví sang ví Ví Mây: miễn phí, không giới hạn số lần.\n- Chuyển tiền ra ngoài hệ thống (tới tài khoản ngân hàng không liên kết): 3.300 đồng mỗi giao dịch.",
+  "Cấp 1: chỉ xác thực số điện thoại\n- Số dư ví tối đa: 10.000.000 đồng.\n- Tổng giao dịch mỗi ngày: 5.000.000 đồng.\n- Không được chuyển tiền ra ngoài hệ thống Ví Mây và không được rút về ngân hàng.",
+  "Gian lận khuyến mãi\nVí Mây có quyền thu hồi ưu đãi và khóa tài khoản nếu phát hiện tạo nhiều tài khoản để nhận khuyến mãi.",
+  "Quy trình xử lý\n1. Ví Mây ghi nhận yêu cầu và liên hệ người nhận trong ứng dụng.\n2. Nếu người nhận đồng ý hoàn trả, tiền được hoàn về người gửi trong 3 ngày làm việc.\n3. Nếu người nhận không đồng ý, Ví Mây không có quyền tự ý lấy lại tiền. Người gửi có thể nhờ cơ quan chức năng giải quyết."
+ ],
+ "reply": {
+  "answerable": false,
+  "claims": []
+ },
+ "usage": {
+  "prompt_tokens": 574,
+  "completion_tokens": 111,
+  "total_tokens": 685
+ },
+ "latency_ms": 4076
+}

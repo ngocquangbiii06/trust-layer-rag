@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "han muc giao dich moi ngay cua tai khoan cap 2 la bao nhieu",
+ "passages": [
+  "Điều kiện\nTài khoản phải đạt cấp 2 (đã xác thực căn cước công dân và khuôn mặt) trước khi liên kết ngân hàng. Tên chủ tài khoản ngân hàng phải trùng tên đã xác thực trên Ví Mây.",
+  "Cấp 2: đã xác thực căn cước công dân và khuôn mặt\n- Số dư ví tối đa: 100.000.000 đồng.\n- Tổng giao dịch mỗi ngày: 50.000.000 đồng.\n- Được chuyển tiền ra ngoài và rút về ngân hàng đã liên kết.",
+  "Gian lận khuyến mãi\nVí Mây có quyền thu hồi ưu đãi và khóa tài khoản nếu phát hiện tạo nhiều tài khoản để nhận khuyến mãi.",
+  "Hạn mức mỗi giao dịch QR\n- Tài khoản cấp 1: tối đa 2.000.000 đồng mỗi giao dịch.\n- Tài khoản cấp 2 trở lên: tối đa 20.000.000 đồng mỗi giao dịch."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Tổng giao dịch mỗi ngày: 50.000.000 đồng.",
+    "source": 2,
+    "quote": "Tổng giao dịch mỗi ngày: 50.000.000 đồng."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 553,
+  "completion_tokens": 205,
+  "total_tokens": 758
+ },
+ "latency_ms": 1662
+}

@@ -1,0 +1,21 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Lãi suất gửi tiết kiệm trong ví là bao nhiêu phần trăm một năm?",
+ "passages": [
+  "Cấp 3: đã liên kết ít nhất một ngân hàng\n- Số dư ví tối đa: 300.000.000 đồng.\n- Tổng giao dịch mỗi ngày: 200.000.000 đồng.",
+  "Gian lận khuyến mãi\nVí Mây có quyền thu hồi ưu đãi và khóa tài khoản nếu phát hiện tạo nhiều tài khoản để nhận khuyến mãi.",
+  "Thời gian lưu trữ\nDữ liệu giao dịch được lưu 10 năm kể từ ngày phát sinh theo yêu cầu quản lý. Ảnh khuôn mặt và ảnh giấy tờ được lưu 5 năm sau khi tài khoản đóng.",
+  "Khiếu nại\n- Gửi khiếu nại trong vòng 60 ngày kể từ ngày phát sinh giao dịch. Quá hạn này, Ví Mây có quyền từ chối tiếp nhận.\n- Ví Mây phản hồi xác nhận đã nhận khiếu nại trong 24 giờ.\n- Thời gian xử lý: tối đa 15 ngày làm việc. Khiếu nại phức tạp cần phối hợp ngân hàng hoặc đối tác có thể kéo dài tới 30 ngày làm việc, và người dùng được thông báo lý do."
+ ],
+ "reply": {
+  "answerable": false,
+  "claims": []
+ },
+ "usage": {
+  "prompt_tokens": 591,
+  "completion_tokens": 185,
+  "total_tokens": 776
+ },
+ "latency_ms": 1809
+}

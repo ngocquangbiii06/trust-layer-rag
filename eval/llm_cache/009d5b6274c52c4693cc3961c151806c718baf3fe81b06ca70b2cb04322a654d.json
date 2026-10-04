@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Cần đạt cấp xác thực nào để liên kết ngân hàng?",
+ "passages": [
+  "Điều kiện\nTài khoản phải đạt cấp 2 (đã xác thực căn cước công dân và khuôn mặt) trước khi liên kết ngân hàng. Tên chủ tài khoản ngân hàng phải trùng tên đã xác thực trên Ví Mây.",
+  "Cách thực hiện\n1. Rút hoặc chuyển hết số dư về ngân hàng đã liên kết.\n2. Vào Cài đặt, chọn Đóng tài khoản và xác nhận bằng khuôn mặt.",
+  "Số lượng\nMỗi ví liên kết tối đa 3 tài khoản ngân hàng cùng lúc.",
+  "Cấp 3: đã liên kết ít nhất một ngân hàng\n- Số dư ví tối đa: 300.000.000 đồng.\n- Tổng giao dịch mỗi ngày: 200.000.000 đồng."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "cấp 2",
+    "source": 1,
+    "quote": "Tài khoản phải đạt cấp 2 (đã xác thực căn cước công dân và khuôn mặt) trước khi liên kết ngân hàng."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 502,
+  "completion_tokens": 238,
+  "total_tokens": 740
+ },
+ "latency_ms": 906
+}

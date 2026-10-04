@@ -1,0 +1,29 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Giao dịch bị trừ tiền do lỗi kỹ thuật thì bao lâu được hoàn?",
+ "passages": [
+  "Hoàn tiền\n- Giao dịch bị trừ tiền nhưng lỗi kỹ thuật: hoàn tiền trong vòng 3 ngày làm việc.\n- Đơn hàng bị hủy sau khi đã thanh toán qua ví: hoàn tiền trong 5 đến 7 ngày làm việc, tùy đối tác bán hàng.\n- Tiền hoàn về nguồn đã dùng để thanh toán. Thanh toán bằng ví thì hoàn về ví.",
+  "Hủy liên kết\nVào mục Ngân hàng liên kết, chọn tài khoản và bấm Hủy liên kết. Việc hủy có hiệu lực ngay. Nếu đang có giao dịch chưa hoàn tất qua tài khoản đó, hệ thống chỉ hủy sau khi giao dịch kết thúc.",
+  "Quy trình xử lý\n1. Ví Mây ghi nhận yêu cầu và liên hệ người nhận trong ứng dụng.\n2. Nếu người nhận đồng ý hoàn trả, tiền được hoàn về người gửi trong 3 ngày làm việc.\n3. Nếu người nhận không đồng ý, Ví Mây không có quyền tự ý lấy lại tiền. Người gửi có thể nhờ cơ quan chức năng giải quyết.",
+  "Thời gian lưu trữ\nDữ liệu giao dịch được lưu 10 năm kể từ ngày phát sinh theo yêu cầu quản lý. Ảnh khuôn mặt và ảnh giấy tờ được lưu 5 năm sau khi tài khoản đóng.",
+  "Báo cáo\nNgười chuyển nhầm cần báo qua mục Hỗ trợ trong vòng 24 giờ kể từ khi chuyển để Ví Mây có thể hỗ trợ tạm giữ khoản tiền nếu chưa bị sử dụng.",
+  "Khóa do nghi ngờ gian lận\nKhi hệ thống phát hiện giao dịch bất thường, tài khoản có thể bị khóa để bảo vệ người dùng. Ví Mây liên hệ qua ứng dụng và yêu cầu xác minh. Thời gian xác minh thông thường từ 1 đến 2 ngày làm việc."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Giao dịch bị trừ tiền nhưng lỗi kỹ thuật: hoàn tiền trong vòng 3 ngày làm việc.",
+    "source": 1,
+    "quote": "Giao dịch bị trừ tiền nhưng lỗi kỹ thuật: hoàn tiền trong vòng 3 ngày làm việc."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 732,
+  "completion_tokens": 190,
+  "total_tokens": 922
+ },
+ "latency_ms": 2199
+}

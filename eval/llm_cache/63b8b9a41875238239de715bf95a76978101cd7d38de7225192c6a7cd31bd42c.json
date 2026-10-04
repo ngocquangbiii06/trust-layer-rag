@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Đã hơn hai tháng kể từ ngày giao dịch, giờ mình còn kiện nại được không?",
+ "passages": [
+  "Khiếu nại\n- Gửi khiếu nại trong vòng 60 ngày kể từ ngày phát sinh giao dịch. Quá hạn này, Ví Mây có quyền từ chối tiếp nhận.\n- Ví Mây phản hồi xác nhận đã nhận khiếu nại trong 24 giờ.\n- Thời gian xử lý: tối đa 15 ngày làm việc. Khiếu nại phức tạp cần phối hợp ngân hàng hoặc đối tác có thể kéo dài tới 30 ngày làm việc, và người dùng được thông báo lý do.",
+  "Sử dụng điểm\nĐiểm có hiệu lực 12 tháng kể từ ngày nhận và được trừ trực tiếp vào lần thanh toán tiếp theo. Điểm không đổi được thành tiền mặt và không chuyển cho người khác.",
+  "Thời gian lưu trữ\nDữ liệu giao dịch được lưu 10 năm kể từ ngày phát sinh theo yêu cầu quản lý. Ảnh khuôn mặt và ảnh giấy tờ được lưu 5 năm sau khi tài khoản đóng.",
+  "Rút tiền về ngân hàng đã liên kết\n- Phí 0,1% giá trị giao dịch, tối thiểu 1.000 đồng và tối đa 10.000 đồng.\n- Mỗi tháng được miễn phí 3 lần rút đầu tiên. Từ lần thứ tư trở đi áp dụng phí như trên."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Không thể khiếu nại sau 60 ngày.",
+    "source": 1,
+    "quote": "Gửi khiếu nại trong vòng 60 ngày kể từ ngày phát sinh giao dịch. Quá hạn này, Ví Mây có quyền từ chối tiếp nhận."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 624,
+  "completion_tokens": 371,
+  "total_tokens": 995
+ },
+ "latency_ms": 3195
+}

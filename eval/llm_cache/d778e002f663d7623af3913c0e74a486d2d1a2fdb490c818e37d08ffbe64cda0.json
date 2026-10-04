@@ -1,0 +1,29 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Ví có bán thông tin của mình cho bên thứ ba không?",
+ "passages": [
+  "Khi nghi ngờ bị lừa\n1. Khóa ví ngay trong mục Bảo mật của ứng dụng.\n2. Báo cáo qua mục Hỗ trợ, chọn \"Báo cáo lừa đảo\".\n3. Giữ lại tin nhắn, ảnh chụp màn hình và mã giao dịch làm bằng chứng.\n\nVí Mây có thể hỗ trợ tạm giữ giao dịch nhưng không cam kết thu hồi được tiền đã chuyển cho người nhận.",
+  "Hạn mức giao dịch theo cấp xác thực\nVí Mây chia tài khoản thành ba cấp xác thực. Hạn mức áp dụng từ phiên bản chính sách 10/2026.",
+  "Thay đổi thông tin\nNgười dùng cần xác thực lại nếu đổi số căn cước hoặc họ tên.",
+  "Dữ liệu Ví Mây thu thập\nHọ tên, số điện thoại, thông tin giấy tờ định danh, ảnh khuôn mặt phục vụ xác thực và lịch sử giao dịch.",
+  "Chuyển tiền\n- Chuyển từ ví sang ví Ví Mây: miễn phí, không giới hạn số lần.\n- Chuyển tiền ra ngoài hệ thống (tới tài khoản ngân hàng không liên kết): 3.300 đồng mỗi giao dịch.",
+  "Chia sẻ dữ liệu\nVí Mây chỉ chia sẻ dữ liệu với ngân hàng và đối tác thanh toán cần thiết để thực hiện giao dịch, và với cơ quan nhà nước khi có yêu cầu hợp pháp. Ví Mây không bán dữ liệu cá nhân."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Ví Mây không bán dữ liệu cá nhân.",
+    "source": 6,
+    "quote": "Ví Mây không bán dữ liệu cá nhân."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 651,
+  "completion_tokens": 190,
+  "total_tokens": 841
+ },
+ "latency_ms": 3555
+}

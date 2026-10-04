@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Hồ sơ xác thực danh tính thường mất bao lâu để được duyệt?",
+ "passages": [
+  "Thời gian xử lý\nPhần lớn hồ sơ được duyệt từ 15 phút đến 24 giờ. Hồ sơ cần kiểm tra thủ công có thể mất tới 3 ngày làm việc.",
+  "Bị từ chối\nHồ sơ thường bị từ chối do ảnh mờ, mất góc hoặc giấy tờ hết hạn. Mỗi tài khoản được thử lại tối đa 5 lần trong 24 giờ. Quá số lần này, tài khoản phải chờ 24 giờ mới được thử tiếp.",
+  "Khóa do nghi ngờ gian lận\nKhi hệ thống phát hiện giao dịch bất thường, tài khoản có thể bị khóa để bảo vệ người dùng. Ví Mây liên hệ qua ứng dụng và yêu cầu xác minh. Thời gian xác minh thông thường từ 1 đến 2 ngày làm việc.",
+  "Dữ liệu Ví Mây thu thập\nHọ tên, số điện thoại, thông tin giấy tờ định danh, ảnh khuôn mặt phục vụ xác thực và lịch sử giao dịch."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Phần lớn hồ sơ được duyệt từ 15 phút đến 24 giờ. Hồ sơ cần kiểm tra thủ công có thể mất tới 3 ngày làm việc.",
+    "source": 1,
+    "quote": "Phần lớn hồ sơ được duyệt từ 15 phút đến 24 giờ. Hồ sơ cần kiểm tra thủ công có thể mất tới 3 ngày làm việc."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 554,
+  "completion_tokens": 252,
+  "total_tokens": 806
+ },
+ "latency_ms": 1257
+}

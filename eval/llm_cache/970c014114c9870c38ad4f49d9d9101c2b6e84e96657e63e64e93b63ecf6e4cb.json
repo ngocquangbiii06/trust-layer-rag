@@ -1,0 +1,32 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Hạn mức giao dịch mỗi ngày là bao nhiêu?",
+ "passages": [
+  "Hạn mức mỗi giao dịch QR\n- Tài khoản cấp 1: tối đa 2.000.000 đồng mỗi giao dịch.\n- Tài khoản cấp 2 trở lên: tối đa 20.000.000 đồng mỗi giao dịch.",
+  "Cấp 3: đã liên kết ít nhất một ngân hàng\n- Số dư ví tối đa: 300.000.000 đồng.\n- Tổng giao dịch mỗi ngày: 200.000.000 đồng.",
+  "Lưu ý\nHạn mức mỗi ngày được tính từ 00:00 đến 23:59 theo giờ Việt Nam. Khi đạt hạn mức, giao dịch tiếp theo bị từ chối và người dùng được thông báo trong ứng dụng.",
+  "Cấp 2: đã xác thực căn cước công dân và khuôn mặt\n- Số dư ví tối đa: 100.000.000 đồng.\n- Tổng giao dịch mỗi ngày: 50.000.000 đồng.\n- Được chuyển tiền ra ngoài và rút về ngân hàng đã liên kết."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Cấp 2: Tổng giao dịch mỗi ngày là 50.000.000 đồng.",
+    "source": 4,
+    "quote": "Tổng giao dịch mỗi ngày: 50.000.000 đồng."
+   },
+   {
+    "text": "Cấp 3: Tổng giao dịch mỗi ngày là 200.000.000 đồng.",
+    "source": 2,
+    "quote": "Tổng giao dịch mỗi ngày: 200.000.000 đồng."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 554,
+  "completion_tokens": 483,
+  "total_tokens": 1037
+ },
+ "latency_ms": 3184
+}

@@ -1,0 +1,29 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Nhân viên Ví Mây có bao giờ hỏi mã OTP của tôi không?",
+ "passages": [
+  "Dấu hiệu lừa đảo thường gặp\n- Cuộc gọi tự xưng nhân viên Ví Mây báo \"tài khoản bị khóa\" và yêu cầu đọc mã OTP.\n- Đường dẫn lạ gửi qua tin nhắn yêu cầu đăng nhập hoặc cập nhật thông tin.\n- Lời mời đầu tư hoặc việc làm online hứa lợi nhuận cao, yêu cầu chuyển tiền trước.",
+  "Nguyên tắc cốt lõi\nNhân viên Ví Mây không bao giờ yêu cầu người dùng cung cấp mã OTP, mã PIN hoặc mật khẩu, dù qua điện thoại, tin nhắn hay mạng xã hội. Ai yêu cầu những thông tin này đều là giả mạo.",
+  "Lưu ý\nVí Mây không cam kết thu hồi được tiền chuyển nhầm. Trước khi chuyển, người dùng cần kiểm tra kỹ số điện thoại và tên hiển thị của người nhận.",
+  "Khi nghi ngờ bị lừa\n1. Khóa ví ngay trong mục Bảo mật của ứng dụng.\n2. Báo cáo qua mục Hỗ trợ, chọn \"Báo cáo lừa đảo\".\n3. Giữ lại tin nhắn, ảnh chụp màn hình và mã giao dịch làm bằng chứng.\n\nVí Mây có thể hỗ trợ tạm giữ giao dịch nhưng không cam kết thu hồi được tiền đã chuyển cho người nhận.",
+  "Khiếu nại\n- Gửi khiếu nại trong vòng 60 ngày kể từ ngày phát sinh giao dịch. Quá hạn này, Ví Mây có quyền từ chối tiếp nhận.\n- Ví Mây phản hồi xác nhận đã nhận khiếu nại trong 24 giờ.\n- Thời gian xử lý: tối đa 15 ngày làm việc. Khiếu nại phức tạp cần phối hợp ngân hàng hoặc đối tác có thể kéo dài tới 30 ngày làm việc, và người dùng được thông báo lý do.",
+  "Quy trình xử lý\n1. Ví Mây ghi nhận yêu cầu và liên hệ người nhận trong ứng dụng.\n2. Nếu người nhận đồng ý hoàn trả, tiền được hoàn về người gửi trong 3 ngày làm việc.\n3. Nếu người nhận không đồng ý, Ví Mây không có quyền tự ý lấy lại tiền. Người gửi có thể nhờ cơ quan chức năng giải quyết."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Nhân viên Ví Mây không bao giờ hỏi mã OTP.",
+    "source": 2,
+    "quote": "Nhân viên Ví Mây không bao giờ yêu cầu người dùng cung cấp mã OTP, mã PIN hoặc mật khẩu, dù qua điện thoại, tin nhắn hay mạng xã hội. Ai yêu cầu những thông tin này đều là giả mạo."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 817,
+  "completion_tokens": 435,
+  "total_tokens": 1252
+ },
+ "latency_ms": 3081
+}

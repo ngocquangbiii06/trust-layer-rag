@@ -1,0 +1,21 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Ví Mây có hỗ trợ giao dịch bằng tiền mã hóa không?",
+ "passages": [
+  "Khi nghi ngờ bị lừa\n1. Khóa ví ngay trong mục Bảo mật của ứng dụng.\n2. Báo cáo qua mục Hỗ trợ, chọn \"Báo cáo lừa đảo\".\n3. Giữ lại tin nhắn, ảnh chụp màn hình và mã giao dịch làm bằng chứng.\n\nVí Mây có thể hỗ trợ tạm giữ giao dịch nhưng không cam kết thu hồi được tiền đã chuyển cho người nhận.",
+  "Nạp tiền và thanh toán\n- Nạp tiền từ ngân hàng đã liên kết: miễn phí.\n- Thanh toán bằng mã QR tại cửa hàng: miễn phí cho người dùng.\n- Thanh toán hóa đơn điện, nước, internet: miễn phí.",
+  "Chuyển tiền\n- Chuyển từ ví sang ví Ví Mây: miễn phí, không giới hạn số lần.\n- Chuyển tiền ra ngoài hệ thống (tới tài khoản ngân hàng không liên kết): 3.300 đồng mỗi giao dịch.",
+  "Gian lận khuyến mãi\nVí Mây có quyền thu hồi ưu đãi và khóa tài khoản nếu phát hiện tạo nhiều tài khoản để nhận khuyến mãi."
+ ],
+ "reply": {
+  "answerable": false,
+  "claims": []
+ },
+ "usage": {
+  "prompt_tokens": 579,
+  "completion_tokens": 149,
+  "total_tokens": 728
+ },
+ "latency_ms": 1439
+}

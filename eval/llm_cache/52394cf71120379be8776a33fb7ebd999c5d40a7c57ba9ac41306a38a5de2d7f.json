@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Tài khoản cấp 1 được giao dịch tối đa bao nhiêu mỗi ngày?",
+ "passages": [
+  "Hạn mức mỗi giao dịch QR\n- Tài khoản cấp 1: tối đa 2.000.000 đồng mỗi giao dịch.\n- Tài khoản cấp 2 trở lên: tối đa 20.000.000 đồng mỗi giao dịch.",
+  "Cấp 3: đã liên kết ít nhất một ngân hàng\n- Số dư ví tối đa: 300.000.000 đồng.\n- Tổng giao dịch mỗi ngày: 200.000.000 đồng.",
+  "Rút tiền về ngân hàng đã liên kết\n- Phí 0,1% giá trị giao dịch, tối thiểu 1.000 đồng và tối đa 10.000 đồng.\n- Mỗi tháng được miễn phí 3 lần rút đầu tiên. Từ lần thứ tư trở đi áp dụng phí như trên.",
+  "Cấp 1: chỉ xác thực số điện thoại\n- Số dư ví tối đa: 10.000.000 đồng.\n- Tổng giao dịch mỗi ngày: 5.000.000 đồng.\n- Không được chuyển tiền ra ngoài hệ thống Ví Mây và không được rút về ngân hàng."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "5.000.000 đồng",
+    "source": 4,
+    "quote": "Tổng giao dịch mỗi ngày: 5.000.000 đồng."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 576,
+  "completion_tokens": 247,
+  "total_tokens": 823
+ },
+ "latency_ms": 1515
+}

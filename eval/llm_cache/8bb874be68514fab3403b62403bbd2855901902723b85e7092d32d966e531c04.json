@@ -1,0 +1,21 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Mã giảm giá để lâu quá có bị mất không?",
+ "passages": [
+  "Hoàn tiền\n- Giao dịch bị trừ tiền nhưng lỗi kỹ thuật: hoàn tiền trong vòng 3 ngày làm việc.\n- Đơn hàng bị hủy sau khi đã thanh toán qua ví: hoàn tiền trong 5 đến 7 ngày làm việc, tùy đối tác bán hàng.\n- Tiền hoàn về nguồn đã dùng để thanh toán. Thanh toán bằng ví thì hoàn về ví.",
+  "Báo cáo\nNgười chuyển nhầm cần báo qua mục Hỗ trợ trong vòng 24 giờ kể từ khi chuyển để Ví Mây có thể hỗ trợ tạm giữ khoản tiền nếu chưa bị sử dụng.",
+  "Sử dụng điểm\nĐiểm có hiệu lực 12 tháng kể từ ngày nhận và được trừ trực tiếp vào lần thanh toán tiếp theo. Điểm không đổi được thành tiền mặt và không chuyển cho người khác.",
+  "Điều kiện\nSố dư ví phải bằng 0 và không có giao dịch hoặc khiếu nại đang xử lý. Điểm hoàn chưa dùng sẽ mất khi đóng tài khoản."
+ ],
+ "reply": {
+  "answerable": false,
+  "claims": []
+ },
+ "usage": {
+  "prompt_tokens": 550,
+  "completion_tokens": 164,
+  "total_tokens": 714
+ },
+ "latency_ms": 2878
+}

@@ -1,0 +1,34 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Khi đóng tài khoản thì điểm hoàn chưa dùng và ảnh giấy tờ của tôi được xử lý thế nào?",
+ "passages": [
+  "Điều kiện\nSố dư ví phải bằng 0 và không có giao dịch hoặc khiếu nại đang xử lý. Điểm hoàn chưa dùng sẽ mất khi đóng tài khoản.",
+  "Sau khi đóng\nTài khoản không thể mở lại. Người dùng muốn dùng tiếp phải đăng ký tài khoản mới và xác thực lại. Dữ liệu được lưu theo thời hạn nêu trong chính sách quyền riêng tư.",
+  "Thời gian lưu trữ\nDữ liệu giao dịch được lưu 10 năm kể từ ngày phát sinh theo yêu cầu quản lý. Ảnh khuôn mặt và ảnh giấy tờ được lưu 5 năm sau khi tài khoản đóng.",
+  "Bị từ chối\nHồ sơ thường bị từ chối do ảnh mờ, mất góc hoặc giấy tờ hết hạn. Mỗi tài khoản được thử lại tối đa 5 lần trong 24 giờ. Quá số lần này, tài khoản phải chờ 24 giờ mới được thử tiếp.",
+  "Hủy liên kết\nVào mục Ngân hàng liên kết, chọn tài khoản và bấm Hủy liên kết. Việc hủy có hiệu lực ngay. Nếu đang có giao dịch chưa hoàn tất qua tài khoản đó, hệ thống chỉ hủy sau khi giao dịch kết thúc.",
+  "Thời gian xử lý\nYêu cầu đóng tài khoản được xử lý trong 7 ngày làm việc."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Điểm hoàn chưa dùng sẽ mất khi đóng tài khoản.",
+    "source": 1,
+    "quote": "Điểm hoàn chưa dùng sẽ mất khi đóng tài khoản."
+   },
+   {
+    "text": "Ảnh khuôn mặt và ảnh giấy tờ được lưu 5 năm sau khi tài khoản đóng.",
+    "source": 3,
+    "quote": "Ảnh khuôn mặt và ảnh giấy tờ được lưu 5 năm sau khi tài khoản đóng."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 636,
+  "completion_tokens": 328,
+  "total_tokens": 964
+ },
+ "latency_ms": 3386
+}

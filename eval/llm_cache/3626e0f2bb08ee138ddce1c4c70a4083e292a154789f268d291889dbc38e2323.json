@@ -1,0 +1,34 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Mất điện thoại thì làm sao chặn ví trước khi bị rút tiền?",
+ "passages": [
+  "Cấp 1: chỉ xác thực số điện thoại\n- Số dư ví tối đa: 10.000.000 đồng.\n- Tổng giao dịch mỗi ngày: 5.000.000 đồng.\n- Không được chuyển tiền ra ngoài hệ thống Ví Mây và không được rút về ngân hàng.",
+  "Mất điện thoại hoặc mất SIM\nNgười dùng cần báo mất qua mục Hỗ trợ từ thiết bị khác hoặc liên hệ tổng đài để khóa ví ngay. Sau khi xác minh danh tính, tài khoản được chuyển sang thiết bị mới.",
+  "Lưu ý\nVí Mây không cam kết thu hồi được tiền chuyển nhầm. Trước khi chuyển, người dùng cần kiểm tra kỹ số điện thoại và tên hiển thị của người nhận.",
+  "Hoàn tiền\n- Giao dịch bị trừ tiền nhưng lỗi kỹ thuật: hoàn tiền trong vòng 3 ngày làm việc.\n- Đơn hàng bị hủy sau khi đã thanh toán qua ví: hoàn tiền trong 5 đến 7 ngày làm việc, tùy đối tác bán hàng.\n- Tiền hoàn về nguồn đã dùng để thanh toán. Thanh toán bằng ví thì hoàn về ví.",
+  "Khi nghi ngờ bị lừa\n1. Khóa ví ngay trong mục Bảo mật của ứng dụng.\n2. Báo cáo qua mục Hỗ trợ, chọn \"Báo cáo lừa đảo\".\n3. Giữ lại tin nhắn, ảnh chụp màn hình và mã giao dịch làm bằng chứng.\n\nVí Mây có thể hỗ trợ tạm giữ giao dịch nhưng không cam kết thu hồi được tiền đã chuyển cho người nhận.",
+  "Rút tiền về ngân hàng đã liên kết\n- Phí 0,1% giá trị giao dịch, tối thiểu 1.000 đồng và tối đa 10.000 đồng.\n- Mỗi tháng được miễn phí 3 lần rút đầu tiên. Từ lần thứ tư trở đi áp dụng phí như trên."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Bạn cần báo mất qua mục Hỗ trợ từ thiết bị khác hoặc liên hệ tổng đài để khóa ví ngay.",
+    "source": 2,
+    "quote": "Người dùng cần báo mất qua mục Hỗ trợ từ thiết bị khác hoặc liên hệ tổng đài để khóa ví ngay. Sau khi xác minh danh tính, tài khoản được chuyển sang thiết bị mới."
+   },
+   {
+    "text": "Khóa ví ngay trong mục Bảo mật của ứng dụng.",
+    "source": 5,
+    "quote": "Khóa ví ngay trong mục Bảo mật của ứng dụng."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 751,
+  "completion_tokens": 555,
+  "total_tokens": 1306
+ },
+ "latency_ms": 5293
+}

@@ -1,0 +1,21 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Số hotline của Ví Mây là gì?",
+ "passages": [
+  "Lưu ý\nVí Mây không cam kết thu hồi được tiền chuyển nhầm. Trước khi chuyển, người dùng cần kiểm tra kỹ số điện thoại và tên hiển thị của người nhận.",
+  "Cấp 1: chỉ xác thực số điện thoại\n- Số dư ví tối đa: 10.000.000 đồng.\n- Tổng giao dịch mỗi ngày: 5.000.000 đồng.\n- Không được chuyển tiền ra ngoài hệ thống Ví Mây và không được rút về ngân hàng.",
+  "Dấu hiệu lừa đảo thường gặp\n- Cuộc gọi tự xưng nhân viên Ví Mây báo \"tài khoản bị khóa\" và yêu cầu đọc mã OTP.\n- Đường dẫn lạ gửi qua tin nhắn yêu cầu đăng nhập hoặc cập nhật thông tin.\n- Lời mời đầu tư hoặc việc làm online hứa lợi nhuận cao, yêu cầu chuyển tiền trước.",
+  "Dữ liệu Ví Mây thu thập\nHọ tên, số điện thoại, thông tin giấy tờ định danh, ảnh khuôn mặt phục vụ xác thực và lịch sử giao dịch."
+ ],
+ "reply": {
+  "answerable": false,
+  "claims": []
+ },
+ "usage": {
+  "prompt_tokens": 566,
+  "completion_tokens": 139,
+  "total_tokens": 705
+ },
+ "latency_ms": 1301
+}

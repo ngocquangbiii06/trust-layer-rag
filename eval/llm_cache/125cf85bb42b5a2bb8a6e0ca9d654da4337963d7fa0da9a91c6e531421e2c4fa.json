@@ -1,0 +1,39 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Mình lỡ bấm nhầm số người nhận khi chuyển, có lấy lại được không?",
+ "passages": [
+  "Lưu ý\nVí Mây không cam kết thu hồi được tiền chuyển nhầm. Trước khi chuyển, người dùng cần kiểm tra kỹ số điện thoại và tên hiển thị của người nhận.",
+  "Báo cáo\nNgười chuyển nhầm cần báo qua mục Hỗ trợ trong vòng 24 giờ kể từ khi chuyển để Ví Mây có thể hỗ trợ tạm giữ khoản tiền nếu chưa bị sử dụng.",
+  "Sử dụng điểm\nĐiểm có hiệu lực 12 tháng kể từ ngày nhận và được trừ trực tiếp vào lần thanh toán tiếp theo. Điểm không đổi được thành tiền mặt và không chuyển cho người khác.",
+  "Quy trình xử lý\n1. Ví Mây ghi nhận yêu cầu và liên hệ người nhận trong ứng dụng.\n2. Nếu người nhận đồng ý hoàn trả, tiền được hoàn về người gửi trong 3 ngày làm việc.\n3. Nếu người nhận không đồng ý, Ví Mây không có quyền tự ý lấy lại tiền. Người gửi có thể nhờ cơ quan chức năng giải quyết.",
+  "Phí\nViệc xử lý yêu cầu chuyển nhầm không thu phí.",
+  "Cấp 1: chỉ xác thực số điện thoại\n- Số dư ví tối đa: 10.000.000 đồng.\n- Tổng giao dịch mỗi ngày: 5.000.000 đồng.\n- Không được chuyển tiền ra ngoài hệ thống Ví Mây và không được rút về ngân hàng."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Có thể lấy lại nếu người nhận đồng ý và trong 3 ngày làm việc.",
+    "source": 4,
+    "quote": "Nếu người nhận đồng ý hoàn trả, tiền được hoàn về người gửi trong 3 ngày làm việc."
+   },
+   {
+    "text": "Không lấy lại nếu người nhận không đồng ý.",
+    "source": 4,
+    "quote": "Nếu người nhận không đồng ý, Ví Mây không có quyền tự ý lấy lại tiền."
+   },
+   {
+    "text": "Cần báo trong 24h để Ví Mây tạm giữ.",
+    "source": 2,
+    "quote": "Người chuyển nhầm cần báo qua mục Hỗ trợ trong vòng 24 giờ kể từ khi chuyển để Ví Mây có thể hỗ trợ tạm giữ khoản tiền nếu chưa bị sử dụng."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 646,
+  "completion_tokens": 600,
+  "total_tokens": 1246
+ },
+ "latency_ms": 1768
+}

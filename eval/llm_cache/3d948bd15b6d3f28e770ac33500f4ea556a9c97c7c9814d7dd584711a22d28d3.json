@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Khiếu nại phức tạp được xử lý tối đa trong bao lâu?",
+ "passages": [
+  "Khiếu nại\n- Gửi khiếu nại trong vòng 60 ngày kể từ ngày phát sinh giao dịch. Quá hạn này, Ví Mây có quyền từ chối tiếp nhận.\n- Ví Mây phản hồi xác nhận đã nhận khiếu nại trong 24 giờ.\n- Thời gian xử lý: tối đa 15 ngày làm việc. Khiếu nại phức tạp cần phối hợp ngân hàng hoặc đối tác có thể kéo dài tới 30 ngày làm việc, và người dùng được thông báo lý do.",
+  "Thời gian xử lý\nPhần lớn hồ sơ được duyệt từ 15 phút đến 24 giờ. Hồ sơ cần kiểm tra thủ công có thể mất tới 3 ngày làm việc.",
+  "Thời gian xử lý\nYêu cầu đóng tài khoản được xử lý trong 7 ngày làm việc.",
+  "Bị từ chối\nHồ sơ thường bị từ chối do ảnh mờ, mất góc hoặc giấy tờ hết hạn. Mỗi tài khoản được thử lại tối đa 5 lần trong 24 giờ. Quá số lần này, tài khoản phải chờ 24 giờ mới được thử tiếp."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "30 ngày làm việc",
+    "source": 1,
+    "quote": "Khiếu nại phức tạp cần phối hợp ngân hàng hoặc đối tác có thể kéo dài tới 30 ngày làm việc, và người dùng được thông báo lý do."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 585,
+  "completion_tokens": 320,
+  "total_tokens": 905
+ },
+ "latency_ms": 2702
+}

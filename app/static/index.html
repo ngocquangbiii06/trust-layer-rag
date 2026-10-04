@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trợ lý chính sách Ví Mây</title>
+<style>
+  :root { --bg:#f7f7f4; --card:#fff; --ink:#18212b; --muted:#5b6672; --line:#d9dee3; --accent:#0b6e63; --warn:#9a5b00; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#12171c; --card:#1b222a; --ink:#e8edf2; --muted:#9aa6b2; --line:#2e3944; --accent:#46c2b3; --warn:#e0a458; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 "Segoe UI", system-ui, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; }
+  h1 { font-size: 1.4rem; margin: 0 0 4px; }
+  .sub { color: var(--muted); margin: 0 0 16px; font-size: .92rem; }
+  form { display:flex; gap:8px; }
+  input { flex:1; padding:10px 12px; font:inherit; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--ink); }
+  button { padding:10px 16px; font:inherit; border:0; border-radius:8px; background:var(--accent); color:#fff; cursor:pointer; }
+  button:disabled { opacity:.6; cursor:wait; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-top:16px; }
+  .abstain { border-left:4px solid var(--warn); }
+  .ok { border-left:4px solid var(--accent); }
+  .meta { color:var(--muted); font-size:.82rem; margin-top:8px; }
+  .cite { border-top:1px solid var(--line); margin-top:10px; padding-top:8px; font-size:.9rem; }
+  .cite b { color:var(--accent); }
+  .tag { display:inline-block; font-size:.78rem; padding:1px 8px; border-radius:99px; border:1px solid var(--line); margin-right:6px; color:var(--muted); }
+  .samples button { background:transparent; color:var(--accent); border:1px solid var(--line); margin:4px 6px 0 0; padding:4px 10px; font-size:.85rem; }
+  .note { color:var(--muted); font-size:.8rem; margin-top:24px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Trợ lý chính sách Ví Mây</h1>
+  <p class="sub">Trả lời từ tài liệu chính sách, có trích dẫn. Không đủ căn cứ thì từ chối. Dữ liệu và công ty đều là giả lập.</p>
+  <form id="form">
+    <input id="q" placeholder="Ví dụ: Nhập sai mã PIN mấy lần thì bị khóa?" autocomplete="off" required minlength="3">
+    <button id="go">Hỏi</button>
+  </form>
+  <div class="samples" id="samples"></div>
+  <div id="out"></div>
+  <p class="note">Số điện thoại, CCCD, email và số tài khoản trong câu hỏi được che trước khi xử lý và không được ghi vào nhật ký.</p>
+</main>
+<script>
+const out = document.getElementById("out"), q = document.getElementById("q"), go = document.getElementById("go");
+const samples = ["Nhập sai mã PIN mấy lần thì bị khóa?", "Rút tiền về ngân hàng mất phí bao nhiêu?", "Số hotline của Ví Mây là gì?", "Thời tiết Hà Nội hôm nay thế nào?"];
+const box = document.getElementById("samples");
+samples.forEach(s => { const b = document.createElement("button"); b.type = "button"; b.textContent = s; b.onclick = () => { q.value = s; ask(); }; box.appendChild(b); });
+const esc = t => String(t).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+async function ask() {
+  go.disabled = true; out.innerHTML = '<div class="card">Đang tìm trong tài liệu…</div>';
+  try {
+    const r = await fetch("/ask", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question: q.value }) });
+    const d = await r.json();
+    if (!r.ok) { out.innerHTML = `<div class="card abstain">Lỗi: ${esc(d.detail || r.status)}</div>`; return; }
+    const cites = d.citations.map(c => `<div class="cite"><b>[${c.id}]</b> ${esc(c.doc_title)} · ${esc(c.heading)}<br><em>“${esc(c.quote)}”</em></div>`).join("");
+    const pii = d.pii_types.length ? `<span class="tag">đã che: ${d.pii_types.map(esc).join(", ")}</span>` : "";
+    const dropped = d.dropped.length ? `<span class="tag">${d.dropped.length} nhận định bị loại</span>` : "";
+    out.innerHTML = `<div class="card ${d.abstained ? "abstain" : "ok"}"><div>${esc(d.answer)}</div>${cites}<div class="meta">${pii}${dropped}<span class="tag">${esc(d.model)}</span><span class="tag">${d.latency_ms} ms</span></div></div>`;
+  } catch (e) { out.innerHTML = `<div class="card abstain">Không kết nối được dịch vụ.</div>`; }
+  finally { go.disabled = false; }
+}
+document.getElementById("form").addEventListener("submit", e => { e.preventDefault(); ask(); });
+</script>
+</body>
+</html>

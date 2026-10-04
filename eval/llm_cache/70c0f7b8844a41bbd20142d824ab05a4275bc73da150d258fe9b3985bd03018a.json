@@ -1,0 +1,29 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "CCCD của tôi là [CCCD], tôi cần làm gì để xác thực danh tính?",
+ "passages": [
+  "Dữ liệu Ví Mây thu thập\nHọ tên, số điện thoại, thông tin giấy tờ định danh, ảnh khuôn mặt phục vụ xác thực và lịch sử giao dịch.",
+  "Điều kiện\nTài khoản phải đạt cấp 2 (đã xác thực căn cước công dân và khuôn mặt) trước khi liên kết ngân hàng. Tên chủ tài khoản ngân hàng phải trùng tên đã xác thực trên Ví Mây.",
+  "Thay đổi thông tin\nNgười dùng cần xác thực lại nếu đổi số căn cước hoặc họ tên.",
+  "Mất điện thoại hoặc mất SIM\nNgười dùng cần báo mất qua mục Hỗ trợ từ thiết bị khác hoặc liên hệ tổng đài để khóa ví ngay. Sau khi xác minh danh tính, tài khoản được chuyển sang thiết bị mới.",
+  "Sau khi đóng\nTài khoản không thể mở lại. Người dùng muốn dùng tiếp phải đăng ký tài khoản mới và xác thực lại. Dữ liệu được lưu theo thời hạn nêu trong chính sách quyền riêng tư.",
+  "Khóa do nghi ngờ gian lận\nKhi hệ thống phát hiện giao dịch bất thường, tài khoản có thể bị khóa để bảo vệ người dùng. Ví Mây liên hệ qua ứng dụng và yêu cầu xác minh. Thời gian xác minh thông thường từ 1 đến 2 ngày làm việc."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Bạn cần cung cấp thông tin giấy tờ định danh và ảnh khuôn mặt để Ví Mây thực hiện xác thực.",
+    "source": 1,
+    "quote": "thông tin giấy tờ định danh, ảnh khuôn mặt phục vụ xác thực"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 629,
+  "completion_tokens": 603,
+  "total_tokens": 1232
+ },
+ "latency_ms": 3519
+}

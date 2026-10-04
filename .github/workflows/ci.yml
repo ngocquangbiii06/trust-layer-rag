@@ -1,0 +1,42 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt pytest ruff
+      - run: ruff check .
+      - run: python -m pytest -q
+      - name: Offline end-to-end evaluation (no API key)
+        run: python -m eval.answer_eval --llm extractive --out eval/results/ci_answers_extractive.md
+      - name: Retrieval evaluation
+        run: python -m eval.retrieval_eval --out eval/results/ci_retrieval.md
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eval-reports
+          path: eval/results/ci_*.md
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t trust-layer-rag .
+      - name: Run the container and call it
+        run: |
+          docker run -d --name rag -p 8000:8000 trust-layer-rag
+          for i in $(seq 1 40); do
+            curl -fs http://127.0.0.1:8000/health && break || sleep 3
+          done
+          curl -fs -X POST http://127.0.0.1:8000/ask \
+            -H "Content-Type: application/json" \
+            -d '{"question": "Nhập sai mã PIN mấy lần thì bị khóa?"}' | tee answer.json
+          python3 -c "import json; d=json.load(open('answer.json')); assert 'abstained' in d and 'citations' in d"
+      - if: always()
+        run: docker logs rag || true

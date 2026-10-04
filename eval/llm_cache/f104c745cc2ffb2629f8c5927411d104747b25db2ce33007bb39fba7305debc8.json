@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Tài khoản bị khóa vì nhập sai PIN thì bao lâu tự mở lại?",
+ "passages": [
+  "Khóa tạm thời do nhập sai mã PIN\nNhập sai mã PIN 5 lần liên tiếp, tài khoản bị khóa tạm thời. Tài khoản tự mở sau 24 giờ. Người dùng cũng có thể mở sớm bằng cách xác thực khuôn mặt trong ứng dụng.",
+  "Tài khoản không hoạt động\nTài khoản không có giao dịch trong 12 tháng bị tạm khóa. Người dùng mở lại bằng cách xác thực khuôn mặt.",
+  "Khóa do nghi ngờ gian lận\nKhi hệ thống phát hiện giao dịch bất thường, tài khoản có thể bị khóa để bảo vệ người dùng. Ví Mây liên hệ qua ứng dụng và yêu cầu xác minh. Thời gian xác minh thông thường từ 1 đến 2 ngày làm việc.",
+  "Sau khi đóng\nTài khoản không thể mở lại. Người dùng muốn dùng tiếp phải đăng ký tài khoản mới và xác thực lại. Dữ liệu được lưu theo thời hạn nêu trong chính sách quyền riêng tư."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Tài khoản tự mở sau 24 giờ.",
+    "source": 1,
+    "quote": "Nhập sai mã PIN 5 lần liên tiếp, tài khoản bị khóa tạm thời. Tài khoản tự mở sau 24 giờ. Người dùng cũng có thể mở sớm bằng cách xác thực khuôn mặt trong ứng dụng."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 549,
+  "completion_tokens": 302,
+  "total_tokens": 851
+ },
+ "latency_ms": 4791
+}

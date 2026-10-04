@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Voucher có thời hạn sử dụng bao lâu?",
+ "passages": [
+  "Hạn sử dụng\nMỗi voucher có hiệu lực 30 ngày kể từ ngày nhận, trừ khi chương trình ghi khác.",
+  "Khi giao dịch bị hủy\nNếu giao dịch dùng voucher bị hủy hoặc hoàn tiền, voucher được trả lại nếu còn hạn sử dụng. Voucher đã hết hạn không được cấp lại.",
+  "Khiếu nại\n- Gửi khiếu nại trong vòng 60 ngày kể từ ngày phát sinh giao dịch. Quá hạn này, Ví Mây có quyền từ chối tiếp nhận.\n- Ví Mây phản hồi xác nhận đã nhận khiếu nại trong 24 giờ.\n- Thời gian xử lý: tối đa 15 ngày làm việc. Khiếu nại phức tạp cần phối hợp ngân hàng hoặc đối tác có thể kéo dài tới 30 ngày làm việc, và người dùng được thông báo lý do.",
+  "Quy tắc sử dụng\n- Mỗi giao dịch chỉ dùng được 1 voucher.\n- Voucher không đổi thành tiền mặt và không chuyển nhượng.\n- Voucher không áp dụng cho nạp tiền, chuyển tiền và thanh toán hóa đơn."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "30 ngày",
+    "source": 1,
+    "quote": "Mỗi voucher có hiệu lực 30 ngày kể từ ngày nhận, trừ khi chương trình ghi khác."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 564,
+  "completion_tokens": 409,
+  "total_tokens": 973
+ },
+ "latency_ms": 1221
+}

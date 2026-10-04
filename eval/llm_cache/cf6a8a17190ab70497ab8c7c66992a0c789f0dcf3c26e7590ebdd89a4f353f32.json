@@ -1,0 +1,29 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Em gõ sai mật mã giao dịch liên tục thì ví có tự đóng băng không, bao giờ dùng lại được?",
+ "passages": [
+  "Khi nghi ngờ bị lừa\n1. Khóa ví ngay trong mục Bảo mật của ứng dụng.\n2. Báo cáo qua mục Hỗ trợ, chọn \"Báo cáo lừa đảo\".\n3. Giữ lại tin nhắn, ảnh chụp màn hình và mã giao dịch làm bằng chứng.\n\nVí Mây có thể hỗ trợ tạm giữ giao dịch nhưng không cam kết thu hồi được tiền đã chuyển cho người nhận.",
+  "Điều kiện\nSố dư ví phải bằng 0 và không có giao dịch hoặc khiếu nại đang xử lý. Điểm hoàn chưa dùng sẽ mất khi đóng tài khoản.",
+  "Lỗi liên kết thường gặp\n- Tên không trùng khớp: kiểm tra lại họ tên trên cả hai nơi.\n- Ngân hàng chưa đăng ký dịch vụ ngân hàng điện tử: đăng ký với ngân hàng trước.\n- Quá số lần nhập sai thông tin: chờ 24 giờ rồi thử lại.",
+  "Khóa tạm thời do nhập sai mã PIN\nNhập sai mã PIN 5 lần liên tiếp, tài khoản bị khóa tạm thời. Tài khoản tự mở sau 24 giờ. Người dùng cũng có thể mở sớm bằng cách xác thực khuôn mặt trong ứng dụng.",
+  "Tài khoản không hoạt động\nTài khoản không có giao dịch trong 12 tháng bị tạm khóa. Người dùng mở lại bằng cách xác thực khuôn mặt.",
+  "Chuyển tiền\n- Chuyển từ ví sang ví Ví Mây: miễn phí, không giới hạn số lần.\n- Chuyển tiền ra ngoài hệ thống (tới tài khoản ngân hàng không liên kết): 3.300 đồng mỗi giao dịch."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Ví sẽ tự đóng băng sau 5 lần nhập sai mã PIN và mở lại sau 24 giờ, hoặc sớm hơn bằng xác thực khuôn mặt.",
+    "source": 4,
+    "quote": "Nhập sai mã PIN 5 lần liên tiếp, tài khoản bị khóa tạm thời. Tài khoản tự mở sau 24 giờ. Người dùng cũng có thể mở sớm bằng cách xác thực khuôn mặt trong ứng dụng."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 707,
+  "completion_tokens": 681,
+  "total_tokens": 1388
+ },
+ "latency_ms": 10079
+}

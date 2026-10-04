@@ -1,0 +1,6 @@
+# Keep LF in the working copy on Windows too, so file hashes recorded in the reports stay stable.
+* text=auto eol=lf
+*.pdf binary
+*.doc binary
+*.docx binary
+*.onnx binary

@@ -1,0 +1,27 @@
+{
+ "model": "openai-compat:openai/gpt-oss-20b",
+ "prompt_version": "vimay-v1",
+ "question": "Muốn đóng tài khoản thì số dư ví phải như thế nào?",
+ "passages": [
+  "Cách thực hiện\n1. Rút hoặc chuyển hết số dư về ngân hàng đã liên kết.\n2. Vào Cài đặt, chọn Đóng tài khoản và xác nhận bằng khuôn mặt.",
+  "Cấp 3: đã liên kết ít nhất một ngân hàng\n- Số dư ví tối đa: 300.000.000 đồng.\n- Tổng giao dịch mỗi ngày: 200.000.000 đồng.",
+  "Điều kiện\nSố dư ví phải bằng 0 và không có giao dịch hoặc khiếu nại đang xử lý. Điểm hoàn chưa dùng sẽ mất khi đóng tài khoản.",
+  "Sau khi đóng\nTài khoản không thể mở lại. Người dùng muốn dùng tiếp phải đăng ký tài khoản mới và xác thực lại. Dữ liệu được lưu theo thời hạn nêu trong chính sách quyền riêng tư."
+ ],
+ "reply": {
+  "answerable": true,
+  "claims": [
+   {
+    "text": "Số dư ví phải bằng 0 và không có giao dịch hoặc khiếu nại đang xử lý.",
+    "source": 3,
+    "quote": "Số dư ví phải bằng 0 và không có giao dịch hoặc khiếu nại đang xử lý."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 513,
+  "completion_tokens": 229,
+  "total_tokens": 742
+ },
+ "latency_ms": 1582
+}
